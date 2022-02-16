@@ -52,7 +52,7 @@ const theme = createTheme({
     },
     error: {
       main: '#f44336',
-    },
+    }
   },
 })
 
