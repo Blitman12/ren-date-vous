@@ -9,13 +9,14 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
-import Home from './pages/Home';
+import Landing from './pages/Landing';
 import Categories from './pages/Categories'
 import Random from './pages/Random'
 import SingleCategory from './pages/SingleCategory'
 import SingleDate from './pages/SingleDate'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Home from './pages/Home'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -63,7 +64,8 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/Home" component={Home} />
             <Route exact path="/Categories" component={Categories} />
             <Route exact path="/Random" component={Random} />
             <Route exact path="/SingleCategory" component={SingleCategory} />
