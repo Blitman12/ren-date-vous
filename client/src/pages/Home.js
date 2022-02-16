@@ -66,7 +66,7 @@ export default function Home() {
               sx={{ fontSize: 40, fontWeight: "Bold" }}
               className={classes.introText}
             >
-              Your Top 3 Favorite Dates
+              Your Top Dates
             </Typography>
 
             <Card className={classes.card}>
