@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-const Home = () => {
+const Random = () => {
     return (
         <div>
-            Home
+            Random
         </div>
     )
 }
 
-export default Home;
+export default Random;

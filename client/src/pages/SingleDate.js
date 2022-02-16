@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-const Home = () => {
+const SingleDate = () => {
     return (
         <div>
-            Home
+            SingleDate
         </div>
     )
 }
 
-export default Home;
+export default SingleDate;
