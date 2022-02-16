@@ -15,6 +15,7 @@ import Random from './pages/Random'
 import SingleCategory from './pages/SingleCategory'
 import SingleDate from './pages/SingleDate'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -70,6 +71,7 @@ function App() {
           </Switch>
         </Router>
       </ThemeProvider>
+      <Footer />
     </ApolloProvider>
   );
 }
