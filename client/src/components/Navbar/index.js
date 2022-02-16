@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import RenDateVous from '../../assets/rendatevous.png'
-
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -15,9 +15,15 @@ const Navbar = () => {
                 <AppBar position="static">
                     <img src={RenDateVous} alt="hero" />
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
+                        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                            <Link style={{textDecoration: 'none', color: 'white'}} to="/Home"><Button color="inherit">Home</Button></Link>
                         </Typography>
-                        <Button color="inherit">Dates</Button>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to="/SavedDates"><Button color="inherit">My Dates</Button></Link>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to="/Random"><Button color="inherit">Random</Button></Link>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to="/SingleDate"><Button color="inherit">SingleDate</Button></Link>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to="/Categories"><Button color="inherit">Categories</Button></Link>
+                        <Link style={{textDecoration: 'none', color: 'white'}} to="/SingleCategory"><Button color="inherit">SingleCategory</Button></Link>
                         <Button color="inherit">Logout</Button>
                     </Toolbar>
                 </AppBar>

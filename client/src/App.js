@@ -17,6 +17,7 @@ import SingleDate from './pages/SingleDate'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home'
+import SavedDates from './pages/SavedDates'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -70,6 +71,7 @@ function App() {
             <Route exact path="/Random" component={Random} />
             <Route exact path="/SingleCategory" component={SingleCategory} />
             <Route exact path="/SingleDate" component={SingleDate} />
+            <Route exact path="/SavedDates" component={SavedDates} />
           </Switch>
         </Router>
       </ThemeProvider>
