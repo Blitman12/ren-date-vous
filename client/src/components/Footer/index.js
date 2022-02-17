@@ -5,6 +5,12 @@ import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
+  container: {
+    display: "flex",
+    flexDirection: 'column',
+    minHeight: "5vh"
+
+  },
   footer: {
     backgroundColor: "#a41a1d",
     textAlign: "center",
@@ -18,7 +24,7 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <footer>
+    <footer className={classes.container}>
       <BottomNavigation
         sx={{ width: "auto", height: "auto" }}
         className={classes.footer}

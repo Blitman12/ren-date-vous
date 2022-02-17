@@ -19,7 +19,7 @@ const useStyles = makeStyles({
         marginTop: '50px',
         border: '2px solid #805373',
         borderRadius: '10%',
-        boxShadow: "#d299ac 20px 20px 80px 60px",
+        boxShadow: "#A2B3D6 10px 10px 100px 20px",
         color: '#a41a1d'
     },
     icon: {
@@ -106,7 +106,7 @@ const Random = () => {
                 </CardActions>
             </Card>
             <div className={classes.randomButton}>
-                <Button variant='contained' >Random</Button>
+                <Button variant='contained' size="large" >Random</Button>
             </div>
         </div>
     )
