@@ -9,6 +9,7 @@ type Query {
 type Mutation {
     loginUser(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    saveDate(dateId: ID!): User
 }
 
 type User {
@@ -16,6 +17,12 @@ type User {
     username: String!
     email: String!
     savedDates: [Date]
+}
+
+type Date {
+    _id: ID!
+    title: String!
+    image: String!
 }
 
 type Auth {
