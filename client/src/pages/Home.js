@@ -1,128 +1,76 @@
 import React from "react";
-import Box from "@mui/material/Box";
+import { Link } from 'react-router-dom'
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import placeholder from "../assets/placeholder.png";
+import Dates from '../components/Dates'
+
+const data = [0, 1, 2]
 
 const useStyles = makeStyles({
   title: {
     color: "black",
     textAlign: "center",
   },
-  homeContainer: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    flexWrap: "wrap",
-  },
-  buttonContainer: {
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    marginTop: 40,
-  },
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    flexWrap: "wrap",
-    width: "400px",
-    height: "500px",
-    marginTop: 40,
+  subTitle: {
+    display: 'flex',
+    justifyContent: 'center'
   },
   buttons: {
-    marginTop: "80px",
+    margin: '10px'
   },
-  dates: {
-    border: "solid",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "auto",
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap'
   },
-  card: {
-    marginTop: 15,
-    backgroundColor: "#FFDCD1",
-    border: "2px solid #805373",
-    borderRadius: "10%",
-    boxShadow: "#A2B3D6 5px 5px 80px 10px",
-    color: "#a41a1d",
+  link: {
+    textDecoration: 'none'
   },
+  cardContainer: {
+    display: 'flex',
+    marginTop: '60px',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    flexDirection: 'column'
+  },
+  dateContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  }
 });
 
 export default function Home() {
   const classes = useStyles();
+
   return (
-    <div className={classes.title}>
-      <h1>
-      Find Your Adventure
+    <div>
+      <h1 className={classes.title}>
+        Find Your Adventure
       </h1>
-      <div className={classes.homeContainer}>
-        <Box className={classes.buttonContainer}>
+      <div className={classes.buttonContainer}>
+        <Link to="/Random" className={classes.link}>
           <Button className={classes.buttons} size='large' variant="contained">
             Random
           </Button>
+        </Link>
+        <Link to="Categories" className={classes.link}>
           <Button className={classes.buttons} size='large' variant="contained">
             Categories
           </Button>
-        </Box>
-
-        <Box className={classes.container}>
-          <div className={classes.dates}>
-            <h2 className={classes.dateTitle}>Your Top Dates</h2>
-            <Card className={classes.card}>
-              <CardMedia
-                component="img"
-                height="300"
-                image={placeholder}
-                alt="Date image here"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Date Name Here
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Date Description here
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card className={classes.card}>
-              <CardMedia
-                component="img"
-                height="300"
-                image={placeholder}
-                alt="Date image here"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Date Name Here
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Date Description here
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card className={classes.card}>
-              <CardMedia
-                component="img"
-                height="300"
-                image={placeholder}
-                alt="Date image here"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Date Name Here
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Date Description here
-                </Typography>
-              </CardContent>
-            </Card>
-          </div>
-        </Box>
+        </Link>
+      </div>
+      <div className={classes.cardContainer}>
+        <div className={classes.subTitle}>
+          <h2>Top Three Dates</h2>
+        </div>
+        <div className={classes.dateContainer}>
+          {data && data.map(date => {
+            return <Dates key={date} />
+          })}
+        </div>
       </div>
     </div>
+    // </div>
   );
 }
