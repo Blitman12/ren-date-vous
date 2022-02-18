@@ -29,10 +29,10 @@ const useStyles = makeStyles({
 
 const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
-      color: '#ff6d75',
+      color: '#CBAB5B',
     },
     '& .MuiRating-iconHover': {
-      color: '#ff3d47',
+      color: '#A87901',
     },
   });
 

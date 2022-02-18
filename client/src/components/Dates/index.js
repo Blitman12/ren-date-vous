@@ -39,10 +39,13 @@ const useStyles = makeStyles({
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
-    color: "#ff6d75",
+    color: "#CBAB5B",
+    // #ff6d75
   },
   "& .MuiRating-iconHover": {
-    color: "#ff3d47",
+    color: "#A87901",
+    
+
   },
 });
 
@@ -550,7 +553,7 @@ export default function SingleCategory() {
                     `${value} Heart${value !== 1 ? "s" : ""}`
                   }
                   precision={0.5}
-                  icon={<FavoriteIcon fontSize="inherit" />}
+                  icon={<FavoriteIcon fontSize="inherit"/>}
                   onChange={(event, newValue) => {
                     setValue(newValue);
                   }}
