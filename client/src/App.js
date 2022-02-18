@@ -7,7 +7,17 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
+import Landing from './pages/Landing';
+import Categories from './pages/Categories'
+import Random from './pages/Random'
+import SingleCategory from './pages/SingleCategory'
+import SingleDate from './pages/SingleDate'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home'
+import SavedDates from './pages/SavedDates'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -28,13 +38,44 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const theme = createTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#a41a1d',
+      light: '#e66d71',
+    },
+    secondary: {
+      main: '#560223',
+    },
+    background: {
+      default: '#e48e8e',
+      paper: '#817777',
+    },
+    error: {
+      main: '#f44336',
+    }
+  },
+})
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        hello
-      </div>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/Categories" component={Categories} />
+            <Route exact path="/Random" component={Random} />
+            <Route exact path="/SingleCategory" component={SingleCategory} />
+            <Route exact path="/SingleDate" component={SingleDate} />
+            <Route exact path="/SavedDates" component={SavedDates} />
+          </Switch>
+        </Router>
+      </ThemeProvider>
+      <Footer />
     </ApolloProvider>
   );
 }
