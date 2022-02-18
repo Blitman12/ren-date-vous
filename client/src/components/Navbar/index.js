@@ -7,23 +7,23 @@ import Button from "@mui/material/Button";
 import Ren from "../../assets/ren.png";
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
-import RenDATEvous from "../../assets/rendatevous.png";
+// import RenDATEvous from "../../assets/rendatevous.png";
 
 const Navbar = () => {
-  const hideHeroImage = window.location.href.split("/")[3];
-  const [ page, setPage ] = useState("");
+  // const hideHeroImage = window.location.href.split("/")[3];
+  // const [ page, setPage ] = useState("");
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setPage(hideHeroImage);
+  //   setPage(hideHeroImage);
 
-  },[hideHeroImage]) 
+  // },[hideHeroImage]) 
 
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
-          {page.length> 0 ? "" : <img src={RenDATEvous} alt="hero" />  }
+          {/* {page.length> 0 ? "" : <img src={RenDATEvous} alt="hero" />  } */}
           <Toolbar>
             <img src={Ren} alt="hero" />
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
