@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
   image: {
     borderRadius: "5%",
-    marginTop: 30
+    marginTop: 30n,
   },
 });
 
@@ -37,32 +37,31 @@ export default function Categories() {
       <h1 className={classes.title}> Select A Category </h1>
       <Box className={classes.buttonContainer}>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Home{" "}
+          Home
         </Button>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Outdoors{" "}
+          Outdoors
         </Button>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Indoors{" "}
+          Indoors
         </Button>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Wild{" "}
+          Wild
         </Button>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Food{" "}
+          Food
         </Button>
         <Button className={classes.buttons} variant="contained" size="large">
-          {" "}
-          Romantic{" "}
+          Romantic
         </Button>
       </Box>
       <div className={classes.imageContainer}>
-        <img className={classes.image} src={date} alt="wine" style={{ height: "300px" }} />
+        <img
+          className={classes.image}
+          src={date}
+          alt="wine"
+          style={{ height: "300px" }}
+        />
       </div>
     </div>
   );
