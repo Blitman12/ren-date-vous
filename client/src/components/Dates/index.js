@@ -3,11 +3,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { makeStyles } from "@mui/styles";
+import { makeStyles, styled } from "@mui/styles";
 import placeholder from "../../assets/placeholder.png";
-import StarIcon from "@mui/icons-material/Star";
 import SaveIcon from "@mui/icons-material/Save";
 import { Box, CardActions, IconButton, Rating } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const useStyles = makeStyles({
   title: {
@@ -36,6 +37,15 @@ const useStyles = makeStyles({
   },
 });
 
+const StyledRating = styled(Rating)({
+  "& .MuiRating-iconFilled": {
+    color: "#ff6d75",
+  },
+  "& .MuiRating-iconHover": {
+    color: "#ff3d47",
+  },
+});
+
 const labels = {
   0.5: "Useless",
   1: "Useless+",
@@ -56,420 +66,518 @@ export default function SingleCategory() {
   return (
     <div>
       <Box>
-      <div className={classes.cardsContainer}>
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                // width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+        <div className={classes.cardsContainer}>
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
 
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
 
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
 
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
 
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
 
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                // width: 200,
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
+
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia
+              component="img"
+              height="140"
+              alt=""
+              image={placeholder}
+            />
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                className={classes.text}
+              >
+                Title
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                className={classes.text}
+              >
+                Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
+                boudin turducken kielbasa flank. Jerky short ribs beef, filet
+                mignon flank strip steak chicken ribeye swine chuck. Pork chop
+                alcatra ribeye pork belly ham salami cupim, ground round chicken
+                porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
+                shank beef ribs.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: 'flex',
+                  alignItems: 'center',
                 }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
-        <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>
-          <CardMedia component="img" height="140" alt="" image={placeholder} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div" className={classes.text}>Title</Typography>
-            <Typography variant="body2" color="text.secondary" className={classes.text}>
-              Bacon ipsum dolor amet pancetta beef ribs meatloaf, drumstick
-              boudin turducken kielbasa flank. Jerky short ribs beef, filet
-              mignon flank strip steak chicken ribeye swine chuck. Pork chop
-              alcatra ribeye pork belly ham salami cupim, ground round chicken
-              porchetta biltong drumstick bacon. Meatloaf pastrami burgdoggen
-              shank beef ribs.
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <Rating
-                name="hover-feedback"
-                value={value}
-                precision={0.5}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
-                emptyIcon={
-                  <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                }
-              />
-              {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
-              )}
-            </Box>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={classes.icon}
-            >
-              <SaveIcon />
-            </IconButton>
-          </CardActions>
-        </Card>
-      </div>
+              >
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
+        </div>
       </Box>
     </div>
   );
