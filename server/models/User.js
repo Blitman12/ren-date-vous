@@ -1,8 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const dateSchema = require('./Date');
-
 const userSchema = new Schema(
     {
         username: {
@@ -21,7 +19,12 @@ const userSchema = new Schema(
             required: true,
         },
 
-        savedDates: [dateSchema],
+        savedDates: [
+            {
+                ref: "Date",
+                type: Schema.Types.ObjectId
+            }
+        ],
     },
     {
         toJSON: {
@@ -44,10 +47,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
 };
 
 
-userSchema.virtual('bookCount').get(function () {
-    return this.savedBooks.length;
+userSchema.virtual('dateCount').get(function () {
+    return this.savedDates.length;
 });
 
 const User = model('User', userSchema);
-
 module.exports = User;

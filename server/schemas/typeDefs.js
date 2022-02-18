@@ -24,6 +24,14 @@ type Date {
     _id: ID!
     title: String!
     image: String!
+    reviews: [Review]
+    reviewCount: Number!
+    rating: Number!
+}
+
+type Review {
+    rating: Number!
+    username: String!
 }
 
 type Auth {
