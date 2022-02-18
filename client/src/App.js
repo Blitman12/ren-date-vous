@@ -11,13 +11,13 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
 import Landing from './pages/Landing';
 import Categories from './pages/Categories'
-import Random from './pages/Random'
-import SingleCategory from './pages/SingleCategory'
-import SingleDate from './pages/SingleDate'
+import Random from './components/Date'
+import SingleCategory from './components/Dates'
+import SingleDate from './components/Date'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home'
-import SavedDates from './pages/SavedDates'
+import SavedDates from './components/Dates'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
