@@ -19,17 +19,17 @@ const useStyles = makeStyles({
         marginTop: '50px',
         border: '2px solid #805373',
         borderRadius: '10%',
-        boxShadow: "#d299ac 20px 20px 80px 60px",
+        boxShadow: "#A2B3D6 10px 10px 100px 20px",
         color: '#a41a1d'
     },
     icon: {
         marginLeft: 'auto'
     },
-    randomButton: {
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: '20px'
-    }
+    // randomButton: {
+    //     display: 'flex',
+    //     justifyContent: 'center',
+    //     marginTop: '20px'
+    // }
 })
 
 const labels = {

@@ -39,11 +39,13 @@ const useStyles = makeStyles({
         height: '500px',
         border: 'solid 2px #805373',
         borderRadius: '25%',
-        boxShadow: "#d299ac 20px 20px 80px 60px"
+        boxShadow: "#A2B3D6 10px 10px 100px 30px"
+        // rgb(75, 80, 90)
+        // #d299ac
     },
     loginRegister: {
         width: '25%',
-        margin: 'auto auto'
+        margin: 'auto auto',
     },
     buttons: {
         width: "30%",

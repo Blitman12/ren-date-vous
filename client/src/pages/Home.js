@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@mui/styles";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,8 +10,7 @@ import placeholder from "../assets/placeholder.png";
 
 const useStyles = makeStyles({
   title: {
-    color: "#A87901",
-    fontSize: "30px",
+    color: "black",
     textAlign: "center",
   },
   homeContainer: {
@@ -24,24 +22,33 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     flexWrap: "wrap",
-    width: "500px",
+    marginTop: 40,
+  },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    width: "400px",
     height: "500px",
+    marginTop: 40,
   },
   buttons: {
-    width: "50%",
     marginTop: "80px",
-    fontSize: "20px",
-    border: "solid"
   },
   dates: {
     border: "solid",
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
-    overflow: "auto"
+    overflow: "auto",
   },
   card: {
-    marginTop: 40
+    marginTop: 15,
+    backgroundColor: "#FFDCD1",
+    border: "2px solid #805373",
+    borderRadius: "10%",
+    boxShadow: "#A2B3D6 5px 5px 80px 10px",
+    color: "#a41a1d",
   },
 });
 
@@ -50,25 +57,21 @@ export default function Home() {
   return (
     <div className={classes.title}>
       <h1>
-        <FavoriteIcon sx={{ fontSize: 50, color: "white" }} /> Find Your
-        Adventure <FavoriteIcon sx={{ fontSize: 50, color: "white" }} />
+      Find Your Adventure
       </h1>
       <div className={classes.homeContainer}>
-        <div className={classes.container}></div>
         <Box className={classes.buttonContainer}>
-          <Button className={classes.buttons}>Random</Button>
-          <Button className={classes.buttons}>Categories</Button>
+          <Button className={classes.buttons} size='large' variant="contained">
+            Random
+          </Button>
+          <Button className={classes.buttons} size='large' variant="contained">
+            Categories
+          </Button>
         </Box>
 
-        <Box className={classes.buttonContainer}>
+        <Box className={classes.container}>
           <div className={classes.dates}>
-            <Typography
-              sx={{ fontSize: 40, fontWeight: "Bold" }}
-              className={classes.introText}
-            >
-              Your Top Dates
-            </Typography>
-
+            <h2 className={classes.dateTitle}>Your Top Dates</h2>
             <Card className={classes.card}>
               <CardMedia
                 component="img"
