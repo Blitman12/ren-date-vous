@@ -55,7 +55,6 @@ export default function SingleCategory() {
   const [hover, setHover] = useState(-1);
   return (
     <div>
-      <h1 className={classes.title}> Outdoors </h1>
       <Box>
       <div className={classes.cardsContainer}>
         <Card  sx={{ maxWidth: 345 }}  className={classes.cards}>

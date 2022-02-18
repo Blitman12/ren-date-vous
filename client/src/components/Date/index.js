@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, Button, CardActions, IconButton, Rating } from '@mui/material';
+import { Box, CardActions, IconButton, Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import { makeStyles } from '@mui/styles'
 import SaveIcon from '@mui/icons-material/Save';
@@ -25,11 +25,7 @@ const useStyles = makeStyles({
     icon: {
         marginLeft: 'auto'
     },
-    randomButton: {
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: '20px'
-    }
+  
 })
 
 const labels = {
@@ -53,7 +49,6 @@ const Random = () => {
 
     return (
         <div>
-            <h1 className={classes.title}>Date Name</h1>
             <Card sx={{ maxWidth: 345 }} className={classes.card}>
                 <CardMedia
                     component="img"
@@ -105,9 +100,6 @@ const Random = () => {
                     </IconButton>
                 </CardActions>
             </Card>
-            <div className={classes.randomButton}>
-                <Button variant='contained' size="large" >Random</Button>
-            </div>
         </div>
     )
 }
