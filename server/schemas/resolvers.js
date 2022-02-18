@@ -40,6 +40,32 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
+        //Save a Date to a user
+        saveDate: async (parent, { input }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedDates: input } },
+                    { new: true, runValidators: true }
+                );
+
+                return updatedUser;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
+
+        //Delete a Date from a user
+        removeDate: async (parent, { dateId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pull: { savedDates: { dateId: dateId } } },
+                    { new: true, runValidators: true }
+                );
+                return updatedUser;
+            }
+        }
     }
 }
 

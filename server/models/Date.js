@@ -11,10 +11,10 @@ const dateSchema = new Schema({
     },
     categories: [
         {
-        type: String,
-        required: true,
-    },
-],
+            type: String,
+            required: true,
+        },
+    ],
     image: {
         // path: String,
     },

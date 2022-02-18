@@ -10,6 +10,7 @@ type Mutation {
     loginUser(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveDate(dateId: ID!): User
+    removeDate(dateId: ID!): User
 }
 
 type User {
