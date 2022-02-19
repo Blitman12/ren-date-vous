@@ -23,7 +23,7 @@ export default function SavedDates() {
             <h1 className={classes.title}> Category </h1>
             <div className={classes.dateContainer}>
                 {data && data.map(date => {
-                    return <Dates />
+                    return <Dates key={date}/>
                 })}
             </div>
         </div >

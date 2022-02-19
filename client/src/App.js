@@ -18,6 +18,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SavedDates from './pages/SavedDates';
+import About from './pages/About';
 
 
 const httpLink = createHttpLink({
@@ -74,6 +75,7 @@ function App() {
             <Route exact path="/SingleCategory" component={SingleCategory} />
             <Route exact path="/SingleDate" component={SingleDate} />
             <Route exact path="/SavedDates" component={SavedDates} />
+            <Route exact path="/About" component={About} />
           </Switch>
         </Router>
       </ThemeProvider>

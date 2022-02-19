@@ -60,7 +60,7 @@ const Random = () => {
         <CardMedia
           component="img"
           height="140"
-          image="https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"
+          image="https://www.sampleposts.com/wp-content/uploads/2020/12/Romantic-Date-Ideas.jpg"
           alt="green iguana"
         />
         <CardContent>

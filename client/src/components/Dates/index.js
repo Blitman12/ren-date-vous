@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { makeStyles, styled } from "@mui/styles";
-import placeholder from "../../assets/placeholder.png";
 import SaveIcon from "@mui/icons-material/Save";
 import { Box, CardActions, IconButton, Rating } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -76,7 +75,7 @@ export default function SingleCategory() {
               component="img"
               height="140"
               alt=""
-              image={placeholder}
+              image="https://www.funnewjersey.com/uploads/fm/romantic-date-ideas-in-nj.jpg"
             />
             <CardContent>
               <Typography

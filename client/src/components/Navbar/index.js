@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -64,6 +64,12 @@ const Navbar = () => {
                 to="/SingleCategory"
               >
                 <Button color="inherit">SingleCategory</Button>
+              </Link>
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/About"
+              >
+                <Button color="inherit">About</Button>
               </Link>
               <Button color="inherit">Logout</Button>
             </Grid>
