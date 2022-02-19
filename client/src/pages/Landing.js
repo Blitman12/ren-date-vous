@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Heart from "../assets/heart.png";
-// import RenDATEvous from "../assets/rendatevous.png";
+
 
 const style = {
   position: "absolute",
@@ -41,8 +41,6 @@ const useStyles = makeStyles({
     border: "solid 2px #805373",
     borderRadius: "25%",
     boxShadow: "#A2B3D6 10px 10px 100px 30px",
-    // rgb(75, 80, 90)
-    // #d299ac
   },
   loginRegister: {
     width: "25%",
@@ -78,7 +76,6 @@ const Landing = () => {
   const handleCloseRegister = () => setOpenRegister(false);
   return (
     <div>
-      {/* <img src={RenDATEvous} alt="hero" /> */}
       <div className={classes.homeContainer}>
         <Box className={classes.buttonContainer}>
           <Button
