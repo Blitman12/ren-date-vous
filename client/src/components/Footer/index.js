@@ -30,8 +30,8 @@ export default function Footer() {
         sx={{ width: "auto", height: "auto"}}
         className={classes.footer}
       >
-        <Typography variant="h6" component="div">
-          <FavoriteBorderIcon />
+        <Typography variant="h7" component="div">
+          <FavoriteBorderIcon fontSize="small" />
           RenDATEvous Team. All Rights Reserved. Copyright &copy; 2022-
          <script>document.write(new Date().getFullYear())</script>
         </Typography>
