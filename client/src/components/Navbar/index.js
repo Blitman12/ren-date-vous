@@ -67,6 +67,12 @@ const Navbar = () => {
               >
                 <Button color="inherit">SingleCategory</Button>
               </Link>
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/About"
+              >
+                <Button color="inherit">About</Button>
+              </Link>
               <Button color="inherit">Logout</Button>
             </Grid>
           </Toolbar>

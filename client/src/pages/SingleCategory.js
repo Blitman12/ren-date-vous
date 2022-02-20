@@ -4,17 +4,28 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     title: {
-      textAlign: "center",
+        textAlign: "center",
     },
+    dateContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+    }
 });
+
+const data = [0, 2, 3, 4, 5]
 
 
 export default function SavedDates() {
     const classes = useStyles();
-return (
-    <div> 
-        <h1 className={classes.title}> Category </h1>
-        <Dates></Dates>
-    </div>
-)
+    return (
+        <div>
+            <h1 className={classes.title}> Category </h1>
+            <div className={classes.dateContainer}>
+                {data && data.map(date => {
+                    return <Dates key={date}/>
+                })}
+            </div>
+        </div >
+    )
 }
