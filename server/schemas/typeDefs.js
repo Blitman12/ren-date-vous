@@ -11,6 +11,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     saveDate(dateId: ID!): User
     removeDate(dateId: ID!): User
+    addReview(rating: Number!, username: String!, dateId: ID!): Date
 }
 
 type User {
