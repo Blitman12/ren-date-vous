@@ -8,15 +8,14 @@ import { makeStyles, styled } from "@mui/styles";
 import SaveIcon from "@mui/icons-material/Save";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Stack from "@mui/material/Stack";
 
 const useStyles = makeStyles({
   title: {
     textAlign: "center",
   },
   card: {
-    margin: "0 auto",
     backgroundColor: "#FFDCD1",
-    marginTop: "50px",
     border: "2px solid #805373",
     borderRadius: "10%",
     boxShadow: "#A2B3D6 10px 10px 100px 20px",
@@ -24,17 +23,27 @@ const useStyles = makeStyles({
   },
   icon: {
     marginLeft: "auto",
+    marginTop: "180px"
   },
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "70px"
+  },
+  button: {
+    display: "flex",
+    marginTop: "180px"
+  }
 });
 
 const StyledRating = styled(Rating)({
-    '& .MuiRating-iconFilled': {
-      color: '#CBAB5B',
-    },
-    '& .MuiRating-iconHover': {
-      color: '#A87901',
-    },
-  });
+  "& .MuiRating-iconFilled": {
+    color: "#CBAB5B",
+  },
+  "& .MuiRating-iconHover": {
+    color: "#A87901",
+  },
+});
 
 const labels = {
   0.5: "Useless",
@@ -55,34 +64,37 @@ const Random = () => {
   const [hover, setHover] = useState(-1);
 
   return (
-    <div>
-      <Card sx={{ maxWidth: 345 }} className={classes.card}>
-        <CardMedia
-          component="img"
-          height="140"
-          image="https://www.sampleposts.com/wp-content/uploads/2020/12/Romantic-Date-Ideas.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Date Category: Outdoors
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Bacon ipsum dolor amet strip steak turkey pork ball tip turducken
-            flank jowl bacon landjaeger tongue porchetta drumstick tri-tip.
-            Alcatra andouille tenderloin salami strip steak sausage drumstick
-            picanha swine capicola spare ribs rump shank jowl pork loin.
-            Tenderloin ground round turducken burgdoggen, jowl kielbasa short
-            loin pancetta shoulder porchetta andouille swine ribeye salami.
-          </Typography>
-        </CardContent>
-        <CardActions>
-        <Box
+    <div className={classes.container}>
+      <Card  sx={{ maxWidth: "80%" }} className={classes.card}>
+        <Stack direction={{ xs: "column", sm: "row"}}
+        spacing={{ xs: 1, sm: 4, md: 1 }}
+        height={{sm: "400px"}}
+      >
+          <CardMedia
+            component="img"
+            image="https://www.sampleposts.com/wp-content/uploads/2020/12/Romantic-Date-Ideas.jpg"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Date Category: Outdoors
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Bacon ipsum dolor amet strip steak turkey pork ball tip turducken
+              flank jowl bacon landjaeger tongue porchetta drumstick tri-tip.
+              Alcatra andouille tenderloin salami strip steak sausage drumstick
+              picanha swine capicola spare ribs rump shank jowl pork loin.
+              Tenderloin ground round turducken burgdoggen, jowl kielbasa short
+              loin pancetta shoulder porchetta andouille swine ribeye salami.
+              {/* note to renDATEvous Team max character for description on these cards are 456, otherwise it will knock the rating and save button off. Thank you */}
+            </Typography>
+            <CardActions>
+              <Box className={classes.button}
                 sx={{
                   "& > legend": { mt: 2 },
                   width: 200,
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
                 <StyledRating
@@ -107,17 +119,19 @@ const Random = () => {
                   </Box>
                 )}
               </Box>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            className={classes.icon}
-          >
-            <SaveIcon />
-          </IconButton>
-        </CardActions>
+              <IconButton 
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
+          </CardContent>
+        </Stack>
       </Card>
     </div>
   );

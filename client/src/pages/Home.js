@@ -8,10 +8,11 @@ const data = [0, 1, 2]
 
 const useStyles = makeStyles({
   title: {
-    color: "black",
+    color: "white",
     textAlign: "center",
   },
   subTitle: {
+    color: "white",
     display: 'flex',
     justifyContent: 'center'
   },
@@ -71,6 +72,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }
