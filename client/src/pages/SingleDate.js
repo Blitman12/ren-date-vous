@@ -5,6 +5,7 @@ import Stars from "../assets/stars.png";
 
 const useStyles = makeStyles({
     title: {
+      color: "white",
       textAlign: "center",
     },
     imageContainer: {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import Member from '../components/Member'
+import Jen from '../assets/jen.png'
 
 const useStyles = makeStyles({
     container: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles({
         flexWrap: 'wrap'
     },
     title: {
+        color: "white",
         textAlign: "center",
     },
     avatar: {
@@ -28,9 +30,9 @@ const team = [
         github: "https://github.com/Blitman12"
     },
     {
-        img: "https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png",
+        img: `${Jen}` ,
         name: "Jennifer Lucas",
-        description: "Lorem Ipsum BAcon Ipsum Lorem Ipsum BAcon Ipsum Lorem Ipsum BAcon Ipsum Lorem Ipsum BAcon Ipsum",
+        description: "Happily married with a little boy, a dog, 3 african spurred tortoises and of course fish. Also a recent graduate from a Full Stack Boot Camp from UofA. ",
         github: "https://github.com/jenmlucas"
     },
     {

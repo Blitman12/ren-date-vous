@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     title: {
+        color: "white",
         textAlign: "center",
     },
     dateContainer: {
