@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
   icon: {
     marginLeft: "auto",
-    marginTop: "80px"
+    marginTop: "180px"
   },
   container: {
     display: "flex",
@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   },
   button: {
     display: "flex",
-    marginTop: "80px"
+    marginTop: "180px"
   }
 });
 
@@ -66,8 +66,9 @@ const Random = () => {
   return (
     <div className={classes.container}>
       <Card  sx={{ maxWidth: "80%" }} className={classes.card}>
-        <Stack direction={{ xs: "column", sm: "row" }}
-        height={{sm: "350px"}}
+        <Stack direction={{ xs: "column", sm: "row"}}
+        spacing={{ xs: 1, sm: 4, md: 1 }}
+        height={{sm: "400px"}}
       >
           <CardMedia
             component="img"
@@ -85,14 +86,7 @@ const Random = () => {
               picanha swine capicola spare ribs rump shank jowl pork loin.
               Tenderloin ground round turducken burgdoggen, jowl kielbasa short
               loin pancetta shoulder porchetta andouille swine ribeye salami.
-              Bacon ipsum dolor amet strip steak turkey pork ball tip turducken
-              flank jowl bacon landjaeger tongue porchetta drumstick tri-tip.
-              Alcatra andouille tenderloin salami strip steak sausage drumstick
-              picanha swine capicola spare ribs rump shank jowl pork loin.
-              Tenderloin ground round turducken burgdoggen, jowl kielbasa short
-              loin pancetta shoulder porchetta andouille swine ribeye salami.
-              Bacon ipsum dolor amet 
-              {/* note to renDATEvous Team max character for description on these cards are 964, otherwise it will knock the rating and save button off. Thank you */}
+              {/* note to renDATEvous Team max character for description on these cards are 456, otherwise it will knock the rating and save button off. Thank you */}
             </Typography>
             <CardActions>
               <Box className={classes.button}
