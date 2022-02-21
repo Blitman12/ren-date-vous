@@ -8,15 +8,13 @@ import { makeStyles, styled } from "@mui/styles";
 import SaveIcon from "@mui/icons-material/Save";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Grid } from "@mui/material";
+import Stack from "@mui/material/Stack";
 
 const useStyles = makeStyles({
   title: {
     textAlign: "center",
   },
   card: {
-    display: "flex",
-    alignItems: "center",
     backgroundColor: "#FFDCD1",
     border: "2px solid #805373",
     borderRadius: "10%",
@@ -25,7 +23,17 @@ const useStyles = makeStyles({
   },
   icon: {
     marginLeft: "auto",
+    marginTop: "80px"
   },
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "100px"
+  },
+  button: {
+    display: "flex",
+    marginTop: "80px"
+  }
 });
 
 const StyledRating = styled(Rating)({
@@ -56,91 +64,81 @@ const Random = () => {
   const [hover, setHover] = useState(-1);
 
   return (
-    <div>
-      <Grid
-        container
-        spacing={1}
-        display="flex"
-        justifyContent="center"
+    <div className={classes.container}>
+      <Card  sx={{ maxWidth: "80%" }} className={classes.card}>
+        <Stack direction={{ xs: "column", sm: "row" }}
+        height={{sm: "350px"}}
       >
-        <Card sx={{ maxWidth: "80%" }} className={classes.card}>
-          <Grid item xs={12}>
-            <CardMedia
-              component="img"
-              height="auto"
-              image="https://www.sampleposts.com/wp-content/uploads/2020/12/Romantic-Date-Ideas.jpg"
-              alt="green iguana"
-            />
-          </Grid>
+          <CardMedia
+            component="img"
+            image="https://www.sampleposts.com/wp-content/uploads/2020/12/Romantic-Date-Ideas.jpg"
+            alt="green iguana"
+          />
           <CardContent>
-            <Grid item xs={10}>
-              <Typography
-                className={classes.wrapText}
-                gutterBottom
-                variant="h5"
-                component="div"
+            <Typography gutterBottom variant="h5" component="div">
+              Date Category: Outdoors
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Bacon ipsum dolor amet strip steak turkey pork ball tip turducken
+              flank jowl bacon landjaeger tongue porchetta drumstick tri-tip.
+              Alcatra andouille tenderloin salami strip steak sausage drumstick
+              picanha swine capicola spare ribs rump shank jowl pork loin.
+              Tenderloin ground round turducken burgdoggen, jowl kielbasa short
+              loin pancetta shoulder porchetta andouille swine ribeye salami.
+              Bacon ipsum dolor amet strip steak turkey pork ball tip turducken
+              flank jowl bacon landjaeger tongue porchetta drumstick tri-tip.
+              Alcatra andouille tenderloin salami strip steak sausage drumstick
+              picanha swine capicola spare ribs rump shank jowl pork loin.
+              Tenderloin ground round turducken burgdoggen, jowl kielbasa short
+              loin pancetta shoulder porchetta andouille swine ribeye salami.
+              Bacon ipsum dolor amet 
+              {/* note to renDATEvous Team max character for description on these cards are 964, otherwise it will knock the rating and save button off. Thank you */}
+            </Typography>
+            <CardActions>
+              <Box className={classes.button}
+                sx={{
+                  "& > legend": { mt: 2 },
+                  width: 200,
+                  display: "flex",
+                  alignItems: "center",
+                }}
               >
-                Date Category: Outdoors
-              </Typography>
-              <Typography
-                className={classes.wrapText}
-                variant="body1"
-                color="text.secondary"
-              >
-                Bacon ipsum dolor amet strip steak turkey pork ball tip
-                turducken flank jowl bacon landjaeger tongue porchetta drumstick
-                tri-tip. Alcatra andouille tenderloin salami strip steak sausage
-                drumstick picanha swine capicola spare ribs rump shank jowl pork
-                loin. Tenderloin ground round turducken burgdoggen, jowl
-                kielbasa short loin pancetta shoulder porchetta andouille swine
-                ribeye salami.
-              </Typography>
-              <CardActions>
-                <Box
-                  sx={{
-                    "& > legend": { mt: 2 },
-                    width: 200,
-                    display: "flex",
-                    alignItems: "center",
+                <StyledRating
+                  name="customized-color"
+                  value={value}
+                  getLabelText={(value) =>
+                    `${value} Heart${value !== 1 ? "s" : ""}`
+                  }
+                  precision={0.5}
+                  icon={<FavoriteIcon fontSize="inherit" />}
+                  emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
                   }}
-                >
-                  <StyledRating
-                    name="customized-color"
-                    value={value}
-                    getLabelText={(value) =>
-                      `${value} Heart${value !== 1 ? "s" : ""}`
-                    }
-                    precision={0.5}
-                    icon={<FavoriteIcon fontSize="inherit" />}
-                    emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
-                    onChange={(event, newValue) => {
-                      setValue(newValue);
-                    }}
-                    onChangeActive={(event, newHover) => {
-                      setHover(newHover);
-                    }}
-                  />
-                  {value !== null && (
-                    <Box sx={{ ml: 2 }}>
-                      {labels[hover !== -1 ? hover : value]}
-                    </Box>
-                  )}
-                </Box>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="menu"
-                  sx={{ mr: 2 }}
-                  className={classes.icon}
-                >
-                  <SaveIcon />
-                </IconButton>
-              </CardActions>
-            </Grid>
+                  onChangeActive={(event, newHover) => {
+                    setHover(newHover);
+                  }}
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
+              <IconButton 
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon />
+              </IconButton>
+            </CardActions>
           </CardContent>
-        </Card>
-      </Grid>
+        </Stack>
+      </Card>
     </div>
   );
 };
