@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   container: {
     display: "flex",
     justifyContent: "center",
-    marginTop: "100px"
+    marginTop: "70px"
   },
   button: {
     display: "flex",
