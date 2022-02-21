@@ -11,13 +11,15 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
 import Landing from './pages/Landing';
 import Categories from './pages/Categories'
-import Random from './pages/Random'
+import Random from './pages/Random';
 import SingleCategory from './pages/SingleCategory'
 import SingleDate from './pages/SingleDate'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home'
-import SavedDates from './pages/SavedDates'
+import Home from './pages/Home';
+import SavedDates from './pages/SavedDates';
+import About from './pages/About';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -58,6 +60,7 @@ const theme = createTheme({
   },
 })
 
+ 
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -72,6 +75,7 @@ function App() {
             <Route exact path="/SingleCategory" component={SingleCategory} />
             <Route exact path="/SingleDate" component={SingleDate} />
             <Route exact path="/SavedDates" component={SavedDates} />
+            <Route exact path="/About" component={About} />
           </Switch>
         </Router>
       </ThemeProvider>
