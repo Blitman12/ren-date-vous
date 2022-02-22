@@ -26,9 +26,9 @@ Brad Litman [Github](https://github.com/Blitman12), email bradlitman94@gmail.com
 
 Jennifer Lucas [Github](https://github.com/jenmlucas), email jenmlucas1@gmail.com,
 
-Nick Kepers [Github](https://github.com/Nkepers), email,
+Nick Kepers [Github](https://github.com/Nkepers), email nick.kepers.coder@gmail.com,
 
-Luke Johnsen [Github](https://github.com/lukejohnsen), email, 
+Luke Johnsen [Github](https://github.com/lukejohnsen), email johnsen.luke@gmail.com, 
 ## Tests
 N/A
 ## Questions
