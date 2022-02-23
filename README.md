@@ -18,6 +18,9 @@
 ## Usage
 This is what it will look like on your device.
 
+[Deployed Application](https://rendatevous.herokuapp.com/);
+
+![RenDATEvous](./client/src/assets/landingScreenshot.png);
 
 ## License
 N/A
