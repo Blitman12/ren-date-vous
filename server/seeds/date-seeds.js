@@ -45,7 +45,7 @@ const dateIdeas = [
   {
     title: 'Theatres',
     description: 'Choose a play or a movie!',
-    categories: 'indoor',
+    categories: 'Indoor',
     image: {theater},
     reviews: ''
   },
@@ -66,7 +66,7 @@ const dateIdeas = [
   {
     title: 'Dinner',
     description: 'Keep it classic and classy yet daring, find a restaurant nearby neither person has tried!',
-    categories: 'Indoors',
+    categories: 'Food',
     image: {dinner},
     reviews: ''
   },
@@ -94,7 +94,7 @@ const dateIdeas = [
   {
     title: 'Random Meal',
     description: 'Find a random recipe you have never made or had before and enjoy some new food right in your kitchen!',
-    categories: 'Home',
+    categories: 'Food',
     image: {cookingDinner},
     reviews: ''
   },
@@ -115,7 +115,7 @@ const dateIdeas = [
   {
     title: 'Peaceful Walk',
     description: 'Go on a peaceful walk.',
-    categories: 'Home',
+    categories: 'Romantic',
     image: {walk},
     reviews: ''
   },
@@ -157,7 +157,7 @@ const dateIdeas = [
   {
     title: 'Wine Tasting',
     description: 'Go taste some new wine at a local orchard, restaurant, or event. Drink responsibly!',
-    categories: 'Indoors',
+    categories: 'Romantic',
     image: {wine},
     reviews: ''
   },
@@ -253,208 +253,208 @@ const dateIdeas = [
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: 'Karaoke',
+    description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
+    categories: 'Indoors',
     image: '',
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: 'Hot Air Balloon Ride',
+    description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
+    categories: 'Romantic',
     image: '',
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: 'Antiquing',
+    description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
+    categories: 'Indoors',
     image: '',
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: 'Rock Climbing',
+    description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
+    categories: 'Outdoors',
     image: '',
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: 'Attend a Local Play',
+    description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
+    categories: 'Indoors',
     image: '',
     reviews: ''
   },
   {
-    title: '',
-    description: '',
-    categories: '',
+    title: "Build a Fire & Make S'mores",
+    description: "Get cozy on a cold night, warm up with a fire and some s'mores",
+    categories: 'Romantic',
     image: '',
     reviews: ''
   },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
-  {
-    title: '',
-    description: '',
-    categories: '',
-    image: '',
-    reviews: ''
-  },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
+  // {
+  //   title: '',
+  //   description: '',
+  //   categories: '',
+  //   image: '',
+  //   reviews: ''
+  // },
 ];
 
 // const seedProducts = () => Product.bulkCreate(productData);
