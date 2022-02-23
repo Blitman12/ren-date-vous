@@ -56,7 +56,7 @@ export default function About() {
             <h1 className={classes.title}>About the renDATEvous Team</h1>
             <div className={classes.container}>
                 {team && team.map(member => {
-                    return <Member key={member.name} name={member.name} description={member.description} img={member.img} github={member.github}/>
+                    return <Member key={member.name} name={member.name} description={member.description} img={member.img} github={member.github} />
                 })}
             </div>
         </div>
