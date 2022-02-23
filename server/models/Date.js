@@ -19,9 +19,6 @@ const dateSchema = new Schema({
     image: {
         path: String
     },
-    externalLink: {
-        // path: String,
-    },
     reviews: [reviewSchema]
 },
     {
