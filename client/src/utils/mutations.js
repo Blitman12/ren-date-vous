@@ -9,8 +9,7 @@ export const LOGIN_USER = gql`
         username
         email
         savedDates {
-          dateId
-          description
+          _id
           title
           image
         }
@@ -27,8 +26,7 @@ export const ADD_USER = gql`
         username
         email
         savedDates {
-            dateId
-            description
+            _id
             title
             image
         }
@@ -40,7 +38,7 @@ export const ADD_USER = gql`
 
 export const SAVE_DATE = gql`
   mutation saveDate($dateId: ID!) {
-    saveDate($dateId: ID!) {
+    saveDate(dateId: $dateId) {
       _id
       username
       email

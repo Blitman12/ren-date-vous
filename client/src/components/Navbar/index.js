@@ -8,6 +8,7 @@ import Ren from "../../assets/ren.png";
 import { Link, useLocation } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import RenDATEvous from "../../assets/rendatevous.png";
+import Auth from '../../utils/auth'
 
 const Navbar = () => {
   const location = useLocation();
@@ -31,7 +32,7 @@ const Navbar = () => {
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/Home"
+                to="/home"
               >
                 <Button color="inherit">Home</Button>
               </Link>
@@ -39,41 +40,41 @@ const Navbar = () => {
             <Grid xs={4}>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/SavedDates"
+                to="/saved"
               >
                 <Button color="inherit">My Dates</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/Random"
+                to="/random"
               >
                 <Button color="inherit">Random</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/SingleDate"
+                to="/date"
               >
                 <Button color="inherit">SingleDate</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/Categories"
+                to="/categories"
               >
                 <Button color="inherit">Categories</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/SingleCategory"
+                to="/category"
               >
                 <Button color="inherit">SingleCategory</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/About"
+                to="/about"
               >
                 <Button color="inherit">About</Button>
               </Link>
-              <Button color="inherit">Logout</Button>
+              {Auth.loggedIn() ? <Button color="inherit" onClick={Auth.logout}>Logout</Button> : null}
             </Grid>
           </Toolbar>
         </AppBar>

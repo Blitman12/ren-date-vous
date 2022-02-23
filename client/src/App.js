@@ -69,13 +69,13 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route exact path="/Home" component={Home} />
-            <Route exact path="/Categories" component={Categories} />
-            <Route exact path="/Random" component={Random} />
-            <Route exact path="/SingleCategory" component={SingleCategory} />
-            <Route exact path="/SingleDate" component={SingleDate} />
-            <Route exact path="/SavedDates" component={SavedDates} />
-            <Route exact path="/About" component={About} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/categories" component={Categories} />
+            <Route exact path="/random" component={Random} />
+            <Route exact path="/category" component={SingleCategory} />
+            <Route exact path="/date" component={SingleDate} />
+            <Route exact path="/saved" component={SavedDates} />
+            <Route exact path="/about" component={About} />
           </Switch>
         </Router>
       </ThemeProvider>

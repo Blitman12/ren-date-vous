@@ -6,6 +6,9 @@ import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Heart from "../assets/heart.png";
+import { ADD_USER, LOGIN_USER } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
+import Auth from '../utils/auth';
 
 
 const style = {
@@ -76,6 +79,57 @@ const Landing = () => {
     const handleCloseLogin = () => setOpenLogin(false);
     const handleOpenRegister = () => setOpenRegister(true);
     const handleCloseRegister = () => setOpenRegister(false);
+    const [loginForm, setLoginForm] = useState({ email: "", password: "" })
+    const [registerForm, setRegisterForm] = useState({ email: "", password: "", username: "" })
+    const [login, { error: loginError }] = useMutation(LOGIN_USER)
+    const [addUser, { error: registerError }] = useMutation(ADD_USER)
+
+
+    const handleLogin = event => {
+        const { name, value } = event.target
+        setLoginForm({
+            ...loginForm,
+            [name]: value
+        })
+        console.log(loginForm)
+    }
+
+    const handleRegister = event => {
+        const { name, value } = event.target
+        setRegisterForm({
+            ...registerForm,
+            [name]: value
+        })
+        console.log(registerForm)
+    }
+
+    const handleLoginSubmit = async event => {
+        event.preventDefault()
+        try {
+            const { data } = await login({
+                variables: { ...loginForm }
+            })
+            console.log(data)
+            Auth.login(data.loginUser.token)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const handleRegisterSubmit = async event => {
+        event.preventDefault()
+        try {
+            const { data } = await addUser({
+                variables: { ...registerForm }
+            })
+            console.log(data)
+            Auth.login(data.addUser.token)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+
     return (
         <div>
             <div className={classes.homeContainer}>
@@ -128,16 +182,24 @@ const Landing = () => {
                         <TextField
                             id="outlined-basic"
                             label="Email"
+                            type="email"
+                            name="email"
+                            value={loginForm.email}
                             variant="outlined"
                             className={classes.textField}
+                            onChange={handleLogin}
                         />
                         <TextField
                             id="outlined-basic"
                             label="Password"
+                            type="password"
+                            name="password"
+                            value={loginForm.password}
                             variant="outlined"
                             className={classes.textField}
+                            onChange={handleLogin}
                         />
-                        <Button variant="contained" className={classes.buttons}>
+                        <Button variant="contained" className={classes.buttons} onClick={handleLoginSubmit}>
                             Lets go
                         </Button>
                     </div>
@@ -162,23 +224,34 @@ const Landing = () => {
                         <TextField
                             id="outlined-basic"
                             label="Username"
+                            type="username" 
+                            name="username"
+                            onChange={handleRegister}
+                            value={registerForm.username}
                             variant="outlined"
                             className={classes.textField}
                         />
                         <TextField
                             id="outlined-basic"
                             label="Email"
+                            type="email" 
+                            name="email"
+                            onChange={handleRegister}
+                            value={registerForm.email}
                             variant="outlined"
                             className={classes.textField}
                         />
                         <TextField
                             id="outlined-basic"
                             label="Password"
+                            type="password" 
+                            name="password"
+                            onChange={handleRegister}
+                            value={registerForm.password}
                             variant="outlined"
-                            type="password"
                             className={classes.textField}
                         />
-                        <Button variant="contained" className={classes.buttons}>
+                        <Button variant="contained" className={classes.buttons} onClick={handleRegisterSubmit}>
                             Signup
                         </Button>
                     </div>
