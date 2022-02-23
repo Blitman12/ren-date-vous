@@ -1,6 +1,6 @@
 import React from "react";
 import SingleCard from "../components/SingleCard";
-import { makeStyles, propsToClassKey } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
 import { useParams } from "react-router-dom";
