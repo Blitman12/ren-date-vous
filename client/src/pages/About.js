@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles'
 import Member from '../components/Member'
 import Jen from '../assets/jen.png';
 import Nick from '../assets/nick.jpg';
+import Luke from '../assets/Luke.jpeg'
 
 const useStyles = makeStyles({
     container: {
@@ -37,15 +38,15 @@ const team = [
         github: "https://github.com/jenmlucas"
     },
     {
-        img: "https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png",
+        img: `${Luke}`,
         name: "Luke Johnsen",
-        description: "Lorem Ipsum BAcon Ipsum Lorem Ipsum BAcon Ipsum Lorem Ipsum BAcon Ipsum",
+        description: "Luke is a recent graduate of the University of Arizona Full-Stack Coding Boot Camp and holds a BA in English. When he is not coding he can be found exploring the latest trail systems in Arizona's gorgeous state parks.",
         github: "https://github.com/lukejohnsen"
     },
     {
         img: `${Nick}`,
         name: "Nicholas Kepers",
-        description: "I enjoy anything regarding travel and space! Arizona native, recently graduated University of Arizona's coding bootcamp.",
+        description: "I enjoy anything regarding travel and space! Arizona native, recently graduated University of Arizona's coding Boot Camp.",
         github: "https://github.com/Nkepers"
     }
 ]
