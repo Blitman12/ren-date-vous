@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles'
 import Member from '../components/Member'
 import Jen from '../assets/jen.png';
 import Nick from '../assets/nick.jpg';
-import Luke from '../assets/Luke.jpeg'
+import Luke from '../assets/Luke.jpeg';
 
 const useStyles = makeStyles({
     container: {
