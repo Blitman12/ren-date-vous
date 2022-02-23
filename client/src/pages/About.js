@@ -1,7 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles'
 import Member from '../components/Member'
-import Jen from '../assets/jen.png'
+import Jen from '../assets/jen.png';
+import Nick from '../assets/nick.jpg';
 
 const useStyles = makeStyles({
     container: {
@@ -42,9 +43,9 @@ const team = [
         github: "https://github.com/lukejohnsen"
     },
     {
-        img: "https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder.png",
+        img: `${Nick}`,
         name: "Nicholas Kepers",
-        description: "Lorem Ipsum BAcon Lorem Ipsum BAcon Lorem Ipsum BAcon Lorem Ipsum BAcon Lorem Ipsum BAcon Lorem Ipsum BAcon",
+        description: "I enjoy anything regarding travel and space! Arizona native, recently graduated University of Arizona's coding bootcamp.",
         github: "https://github.com/Nkepers"
     }
 ]
