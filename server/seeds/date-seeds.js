@@ -1,38 +1,37 @@
 const mongoose = require('mongoose');
 const { Date } = require('../models');
-const connection = require('../config/connection');
 const db = require('../config/connection')
-const aquarium =  "/images/aquarium.jpg";
-const theater =  "/images/theater.jpg";
-const museum =  "/images/museum.jpg";
-const hiking =  "/images/hiking.jpg";
-const dinner =  "/images/Dinner.jpg";
-const cookingClasses =  "/images/cooking-classes.jpg";
-const cookingDinner =  "/images/cooking-dinner.jpg";
-const StarGazing =  "/images/starGazing.jpg";
-const picnic =  "/images/picnic";
-const shooting =  "/images/Shooting.jpg";
-const art =  "/images/art";
-const archery =  "/images/archery";
-const axe =  "/images/axe-throwing.jpg";
-const pillowFort =  "/images/pillowFort.jpg";
-const horseback =  "/images/horseback.jpg";
-const walk =  "/images/walk.jpg";
-const bowling =  "/images/bowling.jpg";
-const skydiving =  "/images/skydiving.jpg";
-const kayaking =  "/images/kayaking.jpg";
-const fishing =  "/images/fishing.jpg";
-const iceSkating =  "/images/ice-skating.jpg";
-const wine =  "/images/wine.jpg";
-const paint =  "/image/paint.jpg";
-const pool =  "/images/pool.jpg";
-const trivia =  "/images/trivia.jpg";
-const clothing =  "/images/clothing.jpg";
-const dog =  "/images/dog.jpg";
-const karts =  "/images/karts.jpg";
-const arcade =  "/images/arcade.jpg";
-const lazer =  "/images/lazerTag.jpg";
-const gym =  "/images/gym.jpg";
+const aquarium = "/images/aquarium.jpg";
+const theater = "/images/theater.jpg";
+const museum = "/images/museum.jpg";
+const hiking = "/images/hiking.jpg";
+const dinner = "/images/Dinner.jpg";
+const cookingClasses = "/images/cooking-classes.jpg";
+const cookingDinner = "/images/cooking-dinner.jpg";
+const StarGazing = "/images/starGazing.jpg";
+const picnic = "/images/picnic";
+const shooting = "/images/Shooting.jpg";
+const art = "/images/art";
+const archery = "/images/archery";
+const axe = "/images/axe-throwing.jpg";
+const pillowFort = "/images/pillowFort.jpg";
+const horseback = "/images/horseback.jpg";
+const walk = "/images/walk.jpg";
+const bowling = "/images/bowling.jpg";
+const skydiving = "/images/skydiving.jpg";
+const kayaking = "/images/kayaking.jpg";
+const fishing = "/images/fishing.jpg";
+const iceSkating = "/images/ice-skating.jpg";
+const wine = "/images/wine.jpg";
+const paint = "/image/paint.jpg";
+const pool = "/images/pool.jpg";
+const trivia = "/images/trivia.jpg";
+const clothing = "/images/clothing.jpg";
+const dog = "/images/dog.jpg";
+const karts = "/images/karts.jpg";
+const arcade = "/images/arcade.jpg";
+const lazer = "/images/lazerTag.jpg";
+const gym = "/images/gym.jpg";
 
 const dateIdeas = [
   {
@@ -67,7 +66,7 @@ const dateIdeas = [
     title: 'Dinner',
     description: 'Keep it classic and classy yet daring, find a restaurant nearby neither person has tried!',
     categories: ['Food'],
-    image: dinner ,
+    image: dinner,
     reviews: []
   },
   {
@@ -456,12 +455,24 @@ const dateIdeas = [
   //   reviews: []
   // },
 ];
-const seedDB = async () => {
-  await Date.create(dateIdeas[0], err => console.log(err))
-};
 
-db.once('open', () => {
-  seedDB()
-});
+mongoose.connect(
+  process.env.SEED_MONGODB_URI || 'mongodb://localhost:27017/rendatevous',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+).then(() => {
+  Date.deleteMany({}, () => {
+
+    Date.insertMany(dateIdeas, (err, docs) => {
+      if (err) {
+        console.log(err)
+      }
+      console.log(docs);
+      mongoose.disconnect();
+    })
+  })
+})
 
 
