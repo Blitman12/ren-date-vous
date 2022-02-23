@@ -1,5 +1,5 @@
 import React from 'react';
-import Date from '../components/Date';
+import SingleDate from '../components/SingleDate';
 import { makeStyles } from '@mui/styles';
 import Stars from "../assets/stars.png";
 
@@ -22,12 +22,12 @@ const useStyles = makeStyles({
 });
 
 
-export default function SingleDate() {
+export default function SingleDateCard() {
     const classes = useStyles();
 return (
     <div className={classes.imageContainer}> 
         <h1 className={classes.title}>  Single Date </h1>
-        <Date></Date>
+        <SingleDate></SingleDate>
     </div>
 )
 }

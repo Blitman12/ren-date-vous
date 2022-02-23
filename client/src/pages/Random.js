@@ -1,5 +1,5 @@
 import React from "react";
-import Date from "../components/Date";
+import SingleDate from "../components/SingleDate";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
 import Stars from "../assets/stars.png";
@@ -27,12 +27,12 @@ imageContainer: {
 }
 });
 
-export default function SingleDate() {
+export default function SingleDateRandom() {
   const classes = useStyles();
   return (
     <div className={classes.imageContainer}>
       <h1 className={classes.title}> Date Name </h1>
-      <Date></Date>
+      <SingleDate></SingleDate>
       <div className={classes.randomButton}>
         <Button variant="contained" size="large">
           Random

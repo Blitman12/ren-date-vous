@@ -1,32 +1,43 @@
-import React from 'react';
-import Dates from '../components/Dates';
-import { makeStyles } from '@mui/styles'
+import React from "react";
+import SingleCard from "../components/SingleCard";
+import { makeStyles, propsToClassKey } from "@mui/styles";
+import { useQuery } from "@apollo/client";
+import { GET_CATDATES } from "../utils/queries";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles({
-    title: {
-        color: "white",
-        textAlign: "center",
-    },
-    dateContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-    }
+  title: {
+    color: "white",
+    textAlign: "center",
+  },
+  dateContainer: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  },
 });
 
-const data = [0, 2, 3, 4, 5]
+export default function SingleCategory() {
+  const classes = useStyles();
+  const { category } = useParams();
+ 
+  const { loading, error, data } = useQuery(GET_CATDATES, {
+    variables: {
+      category: category,
+    },
+  });
 
-
-export default function SavedDates() {
-    const classes = useStyles();
-    return (
-        <div>
-            <h1 className={classes.title}> Category </h1>
-            <div className={classes.dateContainer}>
-                {data && data.map(date => {
-                    return <Dates key={date}/>
-                })}
-            </div>
-        </div >
-    )
+  if (loading) return null;
+  if (error) return `Error: ${error}`;
+  return (
+    <div>
+      <h1 className={classes.title}> Category </h1>
+      <div className={classes.dateContainer}>
+        {data.categorizedDates &&
+          data.categorizedDates.map((date) => {
+            return <SingleCard key={date} title={date.title} description={date.description} image={date.image}></SingleCard>;
+          })}
+      </div>
+    </div>
+  );
 }

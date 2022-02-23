@@ -14,3 +14,13 @@ query findUser{
     }
 }
 `;
+
+export const GET_CATDATES = gql`
+query ($category: String!){ 
+    categorizedDates(category: $category){
+      title
+      description
+      image
+    }
+  }
+`;

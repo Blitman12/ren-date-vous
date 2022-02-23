@@ -9,10 +9,10 @@ const dinner = "/images/Dinner.jpg";
 const cookingClasses = "/images/cooking-classes.jpg";
 const cookingDinner = "/images/cooking-dinner.jpg";
 const StarGazing = "/images/starGazing.jpg";
-const picnic = "/images/picnic";
+const picnic = "/images/picnic.jpg";
 const shooting = "/images/Shooting.jpg";
-const art = "/images/art";
-const archery = "/images/archery";
+const art = "/images/art.jpg";
+const archery = "/images/archery.jpg";
 const axe = "/images/axe-throwing.jpg";
 const pillowFort = "/images/pillowFort.jpg";
 const horseback = "/images/horseback.jpg";
@@ -23,7 +23,7 @@ const kayaking = "/images/kayaking.jpg";
 const fishing = "/images/fishing.jpg";
 const iceSkating = "/images/ice-skating.jpg";
 const wine = "/images/wine.jpg";
-const paint = "/image/paint.jpg";
+const paint = "/images/paint.jpg";
 const pool = "/images/pool.jpg";
 const trivia = "/images/trivia.jpg";
 const clothing = "/images/clothing.jpg";
@@ -251,48 +251,48 @@ const dateIdeas = [
     image: art,
     reviews: []
   },
-  {
-    title: 'Karaoke',
-    description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
-    categories: ['Indoors'],
-    image: '',
-    reviews: []
-  },
-  {
-    title: 'Hot Air Balloon Ride',
-    description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
-    categories: ['Romantic'],
-    image: '',
-    reviews: []
-  },
-  {
-    title: 'Antiquing',
-    description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
-    categories: ['Indoors'],
-    image: '',
-    reviews: []
-  },
-  {
-    title: 'Rock Climbing',
-    description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
-    categories: ['Outdoors'],
-    image: '',
-    reviews: []
-  },
-  {
-    title: 'Attend a Local Play',
-    description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
-    categories: ['Indoors'],
-    image: '',
-    reviews: []
-  },
-  {
-    title: "Build a Fire & Make S'mores",
-    description: "Get cozy on a cold night, warm up with a fire and some s'mores",
-    categories: ['Romantic'],
-    image: '',
-    reviews: []
-  },
+  // {
+  //   title: 'Karaoke',
+  //   description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
+  //   categories: ['Indoors'],
+  //   image: '',
+  //   reviews: []
+  // },
+  // {
+  //   title: 'Hot Air Balloon Ride',
+  //   description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
+  //   categories: ['Romantic'],
+  //   image: '',
+  //   reviews: []
+  // },
+  // {
+  //   title: 'Antiquing',
+  //   description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
+  //   categories: ['Indoors'],
+  //   image: '',
+  //   reviews: []
+  // },
+  // {
+  //   title: 'Rock Climbing',
+  //   description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
+  //   categories: ['Outdoors'],
+  //   image: '',
+  //   reviews: []
+  // },
+  // {
+  //   title: 'Attend a Local Play',
+  //   description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
+  //   categories: ['Indoors'],
+  //   image: '',
+  //   reviews: []
+  // },
+  // {
+  //   title: "Build a Fire & Make S'mores",
+  //   description: "Get cozy on a cold night, warm up with a fire and some s'mores",
+  //   categories: ['Romantic'],
+  //   image: '',
+  //   reviews: []
+  // },
   // {
   //   title: '',
   //   description: '',

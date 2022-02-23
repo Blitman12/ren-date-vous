@@ -11,6 +11,12 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Not logged in');
+        },
+        categorizedDates: async (parent, args) => {
+            console.log(args)
+            const catDates = await Date.find({categories: args.category})
+
+            return catDates;
         }
     },
 

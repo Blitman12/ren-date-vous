@@ -72,7 +72,7 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/random" component={Random} />
-            <Route exact path="/category" component={SingleCategory} />
+            <Route exact path="/category/:category" component={SingleCategory} />
             <Route exact path="/date" component={SingleDate} />
             <Route exact path="/saved" component={SavedDates} />
             <Route exact path="/about" component={About} />

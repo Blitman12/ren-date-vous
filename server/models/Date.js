@@ -17,7 +17,7 @@ const dateSchema = new Schema({
         },
     ],
     image: {
-        path: String
+        type: String
     },
     reviews: [reviewSchema]
 },
