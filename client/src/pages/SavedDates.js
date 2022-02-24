@@ -1,6 +1,8 @@
 import React from 'react';
-import Dates from '../components/Dates';
+import Date from '../components/Date';
 import { makeStyles } from '@mui/styles'
+import { useQuery } from '@apollo/client';
+import { GET_SAVEDATES } from '../utils/queries';
 
 const useStyles = makeStyles({
     title: {
@@ -14,17 +16,21 @@ const useStyles = makeStyles({
     }
 });
 
-const data = [0, 1, 2, 4, 5, 6, 7]
-
 
 export default function SavedDates() {
     const classes = useStyles();
+    const {loading, error, data} = useQuery(GET_SAVEDATES)
+
+    if (loading) {
+        return <div>loading...</div>
+    }
+
     return (
         <div>
             <h1 className={classes.title}> Saved Dates</h1>
             <div className={classes.dateContainer}>
-                {data && data.map(date => {
-                    return <Dates key={date} />
+                {data && data.savedDates.map(date => {
+                    return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} />
                 })}
             </div>
         </div>

@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import date from "../assets/romantic.jpg";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   buttonContainer: {
@@ -34,24 +35,60 @@ export default function Categories() {
     <div className={classes.imageContainer}>
       <div>
         <Box className={classes.buttonContainer}>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Home
-          </Button>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Outdoors
-          </Button>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Indoors
-          </Button>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Wild
-          </Button>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Food
-          </Button>
-          <Button className={classes.buttons} variant="contained" size="large">
-            Romantic
-          </Button>
+          <Link to="/category/Home">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Home
+            </Button>
+          </Link>
+          <Link to="/category/Outdoors">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Outdoors
+            </Button>
+          </Link>
+          <Link to="/category/Indoors">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Indoors
+            </Button>
+          </Link>
+          <Link to="/category/Wild">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Wild
+            </Button>
+          </Link>
+          <Link to="/category/Food">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Food
+            </Button>
+          </Link>
+          <Link to="/category/Romantic">
+            <Button
+              className={classes.buttons}
+              variant="contained"
+              size="large"
+            >
+              Romantic
+            </Button>
+          </Link>
         </Box>
       </div>
     </div>
