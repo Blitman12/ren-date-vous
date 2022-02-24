@@ -14,8 +14,8 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-  }, [location]) 
- 
+  }, [location])
+
 
   const landingLocation = useLocation();
 
@@ -26,9 +26,9 @@ const Navbar = () => {
     <>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
-          {location.pathname.length > 1 ? "" : <img src={RenDATEvous} alt="hero" />  }
+          {location.pathname.length > 1 ? "" : <img src={RenDATEvous} alt="hero" />}
           <Toolbar>
-            {landingLocation.pathname === "/" ? "" : <img src={Ren} alt="hero" /> }
+            {landingLocation.pathname === "/" ? "" : <img src={Ren} alt="hero" />}
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
@@ -37,25 +37,15 @@ const Navbar = () => {
                 <Button color="inherit">Home</Button>
               </Link>
             </Typography>
-            <Grid xs={4}>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/saved"
-              >
-                <Button color="inherit">My Dates</Button>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/random"
-              >
-                <Button color="inherit">Random</Button>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/categories"
-              >
-                <Button color="inherit">Categories</Button>
-              </Link>
+            <Grid xs={2}>
+              {Auth.loggedIn() ?
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/saved"
+                >
+                  <Button color="inherit">My Dates</Button>
+                </Link>
+                : null}
               <Link
                 style={{ textDecoration: "none", color: "white" }}
                 to="/about"

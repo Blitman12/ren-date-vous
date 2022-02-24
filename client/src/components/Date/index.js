@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -61,16 +61,12 @@ const labels = {
 
 export default function SingleCard(props) {
   const classes = useStyles();
-  const [value, setValue] = useState(2);
+  const randomVal = Math.ceil(Math.random() * 5)
+  const [value, setValue] = useState(randomVal);
   const [hover, setHover] = useState(-1);
   const {image, title, description, id} = props
   const [saveDate ,{loading, error, data}] = useMutation(SAVE_DATE)
   const [addReview, {loading: reviewLoading, error: reviewError, data: reviewData}] = useMutation(ADD_REVIEW)
-
-  useEffect(() => {
-
-  }, [value])
-  
 
 
   const handleSave = async event  => {

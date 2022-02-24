@@ -1,6 +1,6 @@
 # Ren-DATE-vous
 ## Description
-
+Here at the Love Guru Team we take love extremely seriously. Have you and your partner constantly fought about what to do on when you finally get your sacred Date Night? Well fight no more with our amazing renDATEvous application! Randomly find amazing dates or select them from one of our numerous exciting categories. Love the date? Save it to your profile for later reference! Enjoy LOVE.
 
 ## Table of Contents (Optional)
 * [Installation](#installation)
@@ -18,6 +18,9 @@
 ## Usage
 This is what it will look like on your device.
 
+[Deployed Application](https://rendatevous.herokuapp.com/)
+
+![RenDATEvous](./client/src/assets/landingScreenshot.png)
 
 ## License
 N/A
