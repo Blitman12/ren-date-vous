@@ -55,7 +55,7 @@ export default function About() {
     const classes = useStyles()
     return (
         <div>
-            <h1 className={classes.title}>About the renDATEvous Team</h1>
+            <h1 className={classes.title}>Meet the RenDATEvous Team</h1>
             <div className={classes.container}>
                 {team && team.map(member => {
                     return <Member key={member.name} name={member.name} description={member.description} img={member.img} github={member.github} />
