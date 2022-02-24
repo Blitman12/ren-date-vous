@@ -4,6 +4,8 @@ import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
 import { useParams } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   title: {
@@ -15,29 +17,46 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexWrap: "wrap",
   },
+  button: {
+    textAlign: "center",
+  },
 });
 
 export default function SingleCategory() {
   const classes = useStyles();
   const { category } = useParams();
- 
+
   const { loading, error, data } = useQuery(GET_CATDATES, {
     variables: {
       category: category,
     },
   });
-  
 
   if (loading) return null;
   if (error) return `Error: ${error}`;
   return (
     <div>
-      <h1 className={classes.title}> Category </h1>
+      <h1 className={classes.title}> {category} </h1>
+      <div className={classes.button}>
+        <Link to="/categories">
+          <Button variant="contained" size="large">
+            Back
+          </Button>
+        </Link>
+      </div>
       <div className={classes.dateContainer}>
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {
-            const {title, description, image, _id} = date
-            return <Date key={_id} title={title} description={description} image={image} id={_id} />
+            const { title, description, image, _id } = date;
+            return (
+              <Date
+                key={_id}
+                title={title}
+                description={description}
+                image={image}
+                id={_id}
+              />
+            );
           })}
       </div>
     </div>
