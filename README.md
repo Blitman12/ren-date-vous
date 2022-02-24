@@ -17,8 +17,6 @@
 
 ## Usage
 This is what it will look like on your device.
-
-
 ## License
 N/A
 ## Contributing
