@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
-import Dates from '../components/Dates'
-
-const data = [0, 1, 2]
+import Date from '../components/Date'
+import { useQuery } from '@apollo/client';
+import { GET_SAVEDATES } from '../utils/queries';
 
 const useStyles = makeStyles({
   title: {
@@ -44,6 +44,15 @@ const useStyles = makeStyles({
 export default function Home() {
   const classes = useStyles();
 
+  const { loading, error, data } = useQuery(GET_SAVEDATES)
+
+  if (loading) {
+    return <div>loading...</div>
+  }
+
+  
+  
+
   return (
     <div>
       <h1 className={classes.title}>
@@ -63,11 +72,11 @@ export default function Home() {
       </div>
       <div className={classes.cardContainer}>
         <div className={classes.subTitle}>
-          <h2>Top Three Dates</h2>
+          <h2>Date Previews</h2>
         </div>
         <div className={classes.dateContainer}>
-          {data && data.map(date => {
-            return <Dates key={date} />
+          {data && data.savedDates.slice(0, 3).map(date => {
+            return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} />
           })}
         </div>
       </div>

@@ -6,13 +6,6 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        username
-        email
-        savedDates {
-          _id
-          title
-          image
-        }
       }
     }
   }
@@ -23,13 +16,6 @@ export const ADD_USER = gql`
     addUser(username: $username, email: $email, password: $password) {
       user {
         _id
-        username
-        email
-        savedDates {
-            _id
-            title
-            image
-        }
       }
       token
     }
@@ -42,7 +28,9 @@ export const SAVE_DATE = gql`
       _id
       username
       email
-      reviewCount
+      savedDates {
+        _id
+      }
     }
   }
 `;
@@ -53,5 +41,17 @@ mutation removeDate($dateId: ID!) {
       _id
       username
     }
+}
+`;
+
+export const ADD_REVIEW = gql`
+mutation addReview($rating: Int!, $dateId: ID!) {
+  addReview(rating: $rating, dateId: $dateId) {
+    title
+    reviews {
+      rating
+      username
+    }
+  }
 }
 `;

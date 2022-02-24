@@ -11,6 +11,22 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError('Not logged in');
+        },
+        categorizedDates: async (parent, args) => {
+            console.log(args)
+            const catDates = await Date.find({categories: args.category})
+
+            return catDates;
+        },
+        dates: async (parent, args) => {
+            return await Date.find({})
+        },
+        savedDates: async(parent, args, context) => {
+            if(context.user) {
+                const currentUser =  await User.findById(context.user._id).populate("savedDates")
+                return currentUser.savedDates
+            }
+            throw new AuthenticationError('Incorrect credentials');
         }
     },
 
@@ -44,14 +60,13 @@ const resolvers = {
         },
 
         //Save a Date to a user
-        saveDate: async (parent, { input }, context) => {
+        saveDate: async (parent, { dateId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedDates: input } },
+                    { $addToSet: { savedDates: dateId } },
                     { new: true, runValidators: true }
                 );
-
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!');
@@ -67,6 +82,18 @@ const resolvers = {
                 );
                 return updatedUser;
             }
+        },
+
+        //Add a review
+        addReview: async(parent, {rating, dateId}, context) => {
+            if (context.user) {
+                return await Date.findOneAndUpdate(
+                    {_id: dateId},
+                    { $addToSet: {reviews: {rating: rating, username: context.user.username}}},
+                    { new: true, runValidators: true }
+                )
+            }
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 }

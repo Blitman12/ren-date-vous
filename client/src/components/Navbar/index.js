@@ -52,21 +52,9 @@ const Navbar = () => {
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
-                to="/date"
-              >
-                <Button color="inherit">SingleDate</Button>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
                 to="/categories"
               >
                 <Button color="inherit">Categories</Button>
-              </Link>
-              <Link
-                style={{ textDecoration: "none", color: "white" }}
-                to="/category"
-              >
-                <Button color="inherit">SingleCategory</Button>
               </Link>
               <Link
                 style={{ textDecoration: "none", color: "white" }}
