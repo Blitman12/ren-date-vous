@@ -457,7 +457,7 @@ const dateIdeas = [
 ];
 
 mongoose.connect(
-  process.env.SEED_MONGODB_URI || 'mongodb://localhost:27017/rendatevous',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/rendatevous',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
