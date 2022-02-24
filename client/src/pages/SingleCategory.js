@@ -1,5 +1,5 @@
 import React from "react";
-import SingleCard from "../components/SingleCard";
+import Date from "../components/Date";
 import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
@@ -26,6 +26,7 @@ export default function SingleCategory() {
       category: category,
     },
   });
+  
 
   if (loading) return null;
   if (error) return `Error: ${error}`;
@@ -35,7 +36,8 @@ export default function SingleCategory() {
       <div className={classes.dateContainer}>
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {
-            return <SingleCard key={date} title={date.title} description={date.description} image={date.image}></SingleCard>;
+            const {title, description, image, _id} = date
+            return <Date key={_id} title={title} description={description} image={image} id={_id} />
           })}
       </div>
     </div>

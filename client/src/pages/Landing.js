@@ -91,7 +91,6 @@ const Landing = () => {
             ...loginForm,
             [name]: value
         })
-        console.log(loginForm)
     }
 
     const handleRegister = event => {
@@ -100,7 +99,6 @@ const Landing = () => {
             ...registerForm,
             [name]: value
         })
-        console.log(registerForm)
     }
 
     const handleLoginSubmit = async event => {

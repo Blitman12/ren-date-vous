@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,6 +8,8 @@ import SaveIcon from "@mui/icons-material/Save";
 import { Box, CardActions, IconButton, Rating } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { ADD_REVIEW, SAVE_DATE } from "../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const useStyles = makeStyles({
   title: {
@@ -50,22 +52,52 @@ const StyledRating = styled(Rating)({
 });
 
 const labels = {
-  0.5: "Useless",
-  1: "Useless+",
-  1.5: "Poor",
-  2: "Poor+",
-  2.5: "Ok",
-  3: "Ok+",
-  3.5: "Good",
-  4: "Good+",
-  4.5: "Excellent",
-  5: "Excellent+",
+  1: "Useless",
+  2: "Poor",
+  3: "Ok",
+  4: "Good",
+  5: "Excellent"
 };
 
 export default function SingleCard(props) {
   const classes = useStyles();
   const [value, setValue] = useState(2);
   const [hover, setHover] = useState(-1);
+  const {image, title, description, id} = props
+  const [saveDate ,{loading, error, data}] = useMutation(SAVE_DATE)
+  const [addReview, {loading: reviewLoading, error: reviewError, data: reviewData}] = useMutation(ADD_REVIEW)
+
+  useEffect(() => {
+
+  }, [value])
+  
+
+
+  const handleSave = async event  => {
+    event.preventDefault()
+    try {
+        await saveDate({
+          variables: {
+            dateId: id
+          }
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const handleReview = async (newValue) => {
+    try {
+        await addReview({
+          variables: {
+            dateId: id,
+            rating: newValue
+          }
+        })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div>
       <Box>
@@ -75,7 +107,7 @@ export default function SingleCard(props) {
               component="img"
               height="140"
               alt=""
-              image={props.image}
+              image={image}
             />
             <CardContent>
               <Typography
@@ -84,14 +116,14 @@ export default function SingleCard(props) {
                 component="div"
                 className={classes.text}
               >
-                {props.title}
+                {title}
               </Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
                 className={classes.text}
               >
-                {props.description}
+                {description}
               </Typography>
             </CardContent>
             <CardActions>
@@ -109,10 +141,11 @@ export default function SingleCard(props) {
                   getLabelText={(value) =>
                     `${value} Heart${value !== 1 ? "s" : ""}`
                   }
-                  precision={0.5}
+                  precision={1}
                   icon={<FavoriteIcon fontSize="inherit" />}
                   onChange={(event, newValue) => {
                     setValue(newValue);
+                    handleReview(newValue)
                   }}
                   onChangeActive={(event, newHover) => {
                     setHover(newHover);
@@ -133,7 +166,7 @@ export default function SingleCard(props) {
                 sx={{ mr: 2 }}
                 className={classes.icon}
               >
-                <SaveIcon />
+                <SaveIcon onClick={handleSave}/>
               </IconButton>
             </CardActions>
           </Card>

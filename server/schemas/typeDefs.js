@@ -6,6 +6,7 @@ type Query {
     me: User
     categorizedDates(category: String!): [Date]
     dates: [Date]
+    savedDates: [Date]
 }
 
 type Mutation {
@@ -13,7 +14,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     saveDate(dateId: ID!): User
     removeDate(dateId: ID!): User
-    addReview(rating: Int!, username: String!, dateId: ID!): Date
+    addReview(rating: Int!, dateId: ID!): Date
 }
 
 type User {

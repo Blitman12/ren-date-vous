@@ -13,7 +13,6 @@ import Landing from './pages/Landing';
 import Categories from './pages/Categories'
 import Random from './pages/Random';
 import SingleCategory from './pages/SingleCategory'
-import SingleDate from './pages/SingleDate'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -73,7 +72,6 @@ function App() {
             <Route exact path="/categories" component={Categories} />
             <Route exact path="/random" component={Random} />
             <Route exact path="/category/:category" component={SingleCategory} />
-            <Route exact path="/date" component={SingleDate} />
             <Route exact path="/saved" component={SavedDates} />
             <Route exact path="/about" component={About} />
           </Switch>

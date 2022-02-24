@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import Stars from "../assets/stars.png";
 import { useQuery } from "@apollo/client";
 import { DATES } from "../utils/queries";
-import SingleCard from "../components/SingleCard";
+import Date from "../components/Date";
 
 const useStyles = makeStyles({
   title: {
@@ -34,13 +34,12 @@ export default function SingleDateRandom() {
   const { loading, error, data } = useQuery(DATES);
   if(loading) return null;
   if(error) return `error: ${error}`;
-  const randomDate = data.dates[Math.floor(Math.random() * data.dates.length)]
-  console.log(randomDate)
+  const {title, description, image, _id} = data.dates[Math.floor(Math.random() * data.dates.length)]
 
   return (
     <div className={classes.imageContainer}>
-      <h1 className={classes.title}>{randomDate.title}</h1>
-      <SingleCard title={randomDate.title} description={randomDate.description} image={randomDate.image}></SingleCard>
+      <h1 className={classes.title}>{title}</h1>
+      <Date title={title} description={description} image={image} key={_id} id={_id}></Date>
       <div className={classes.randomButton}>
         <Button variant="contained" size="large" onClick = {() => window.location.reload()}>
           Random
