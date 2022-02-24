@@ -40,6 +40,9 @@ mutation removeDate($dateId: ID!) {
     removeDate(dateId: $dateId) {
       _id
       username
+      savedDates {
+        _id
+      }
     }
 }
 `;
