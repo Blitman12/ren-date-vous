@@ -5,6 +5,7 @@ const typeDefs = gql`
 type Query {
     me: User
     categorizedDates(category: String!): [Date]
+    dates: [Date]
 }
 
 type Mutation {

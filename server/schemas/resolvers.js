@@ -17,6 +17,9 @@ const resolvers = {
             const catDates = await Date.find({categories: args.category})
 
             return catDates;
+        },
+        dates: async (parent, args) => {
+            return await Date.find({})
         }
     },
 

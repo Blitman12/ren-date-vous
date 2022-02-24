@@ -63,7 +63,6 @@ const labels = {
 };
 
 export default function SingleCard(props) {
-    console.log(props.image)
   const classes = useStyles();
   const [value, setValue] = useState(2);
   const [hover, setHover] = useState(-1);

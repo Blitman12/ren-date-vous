@@ -24,3 +24,13 @@ query ($category: String!){
     }
   }
 `;
+
+export const DATES = gql`
+query {
+  dates{
+    title
+    description
+    image
+  }
+}
+`;
