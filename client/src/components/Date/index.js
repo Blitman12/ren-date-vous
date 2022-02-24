@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,8 +8,10 @@ import SaveIcon from "@mui/icons-material/Save";
 import { Box, CardActions, IconButton, Rating } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { ADD_REVIEW, SAVE_DATE } from "../../utils/mutations";
+import { ADD_REVIEW, REMOVE_DATE, SAVE_DATE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
   title: {
@@ -46,7 +48,7 @@ const StyledRating = styled(Rating)({
   },
   "& .MuiRating-iconHover": {
     color: "#A87901",
-    
+
 
   },
 });
@@ -64,35 +66,57 @@ export default function SingleCard(props) {
   const randomVal = Math.ceil(Math.random() * 5)
   const [value, setValue] = useState(randomVal);
   const [hover, setHover] = useState(-1);
-  const {image, title, description, id} = props
-  const [saveDate ,{loading, error, data}] = useMutation(SAVE_DATE)
-  const [addReview, {loading: reviewLoading, error: reviewError, data: reviewData}] = useMutation(ADD_REVIEW)
+  const { image, title, description, id } = props
+  const [saveDate, { loading, error, data }] = useMutation(SAVE_DATE)
+  const [addReview, { loading: reviewLoading, error: reviewError, data: reviewData }] = useMutation(ADD_REVIEW)
+  const [removeDate, { loading: removeLoading, error: removeError, data: removeData }] = useMutation(REMOVE_DATE)
 
-
-  const handleSave = async event  => {
+  const handleSave = async event => {
     event.preventDefault()
     try {
-        await saveDate({
-          variables: {
-            dateId: id
-          }
-        })
+      await saveDate({
+        variables: {
+          dateId: id
+        }
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const handleDel = async event => {
+    event.preventDefault()
+    try {
+      await removeDate({
+        variables: {
+          dateId: id
+        }
+      })
     } catch (error) {
       console.log(error)
     }
   }
   const handleReview = async (newValue) => {
     try {
-        await addReview({
-          variables: {
-            dateId: id,
-            rating: newValue
-          }
-        })
+      await addReview({
+        variables: {
+          dateId: id,
+          rating: newValue
+        }
+      })
     } catch (error) {
       console.log(error)
     }
   }
+  const location = useLocation();
+
+  useEffect(() => {
+  }, [location])
+
+
+  const landingLocation = useLocation();
+
+  useEffect(() => {
+  }, [landingLocation])
 
   return (
     <div>
@@ -154,7 +178,7 @@ export default function SingleCard(props) {
                   </Box>
                 )}
               </Box>
-              <IconButton
+              {location.pathname === "/saved" ? <IconButton
                 size="large"
                 edge="start"
                 color="inherit"
@@ -162,8 +186,17 @@ export default function SingleCard(props) {
                 sx={{ mr: 2 }}
                 className={classes.icon}
               >
-                <SaveIcon onClick={handleSave}/>
-              </IconButton>
+                <DeleteIcon onClick={handleDel} />
+              </IconButton> : <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+                className={classes.icon}
+              >
+                <SaveIcon onClick={handleSave} />
+              </IconButton>}
             </CardActions>
           </Card>
         </div>
