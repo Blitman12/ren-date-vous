@@ -52,6 +52,12 @@ const Navbar = () => {
               >
                 <Button color="inherit">About</Button>
               </Link>
+              <Link
+                style={{ textDecoration: "none", color: "white" }}
+                to="/"
+              >
+                <Button color="inherit">Get Started</Button>
+              </Link>
               {Auth.loggedIn() ? <Button color="inherit" onClick={Auth.logout}>Logout</Button> : null}
             </Grid>
           </Toolbar>
