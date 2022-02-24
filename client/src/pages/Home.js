@@ -5,6 +5,7 @@ import { makeStyles } from "@mui/styles";
 import Date from '../components/Date'
 import { useQuery } from '@apollo/client';
 import { GET_SAVEDATES } from '../utils/queries';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const useStyles = makeStyles({
   title: {
@@ -72,7 +73,7 @@ export default function Home() {
       </div>
       <div className={classes.cardContainer}>
         <div className={classes.subTitle}>
-          <h2>Date Previews</h2>
+          <h2>Memories <FavoriteIcon color="primary"/></h2>
         </div>
         <div className={classes.dateContainer}>
           {data && data.savedDates.slice(0, 3).map(date => {
