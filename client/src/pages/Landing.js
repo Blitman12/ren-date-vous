@@ -200,6 +200,7 @@ const Landing = () => {
                         <Button variant="contained" className={classes.buttons} onClick={handleLoginSubmit}>
                             Lets go
                         </Button>
+                        {loginError && <p>Login Error: double check your credentials and try again</p>}
                     </div>
                 </Box>
             </Modal>
@@ -252,6 +253,7 @@ const Landing = () => {
                         <Button variant="contained" className={classes.buttons} onClick={handleRegisterSubmit}>
                             Signup
                         </Button>
+                        {registerError && <p>An error occurred: please try again</p>}
                     </div>
                 </Box>
             </Modal>
