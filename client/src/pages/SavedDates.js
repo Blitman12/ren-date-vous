@@ -19,18 +19,22 @@ const useStyles = makeStyles({
 
 export default function SavedDates() {
     const classes = useStyles();
-    const {loading, error, data} = useQuery(GET_SAVEDATES)
+    const {loading, error, data, refetch} = useQuery(GET_SAVEDATES, {
+        fetchPolicy: 'network-only',
+
+    })
 
     if (loading) {
         return <div>loading...</div>
     }
+
 
     return (
         <div>
             <h1 className={classes.title}> Saved Dates</h1>
             <div className={classes.dateContainer}>
                 {data && data.savedDates.map(date => {
-                    return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} />
+                    return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} refetch={refetch}/>
                 })}
             </div>
         </div>

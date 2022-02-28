@@ -36,6 +36,8 @@ export default function SingleDateRandom() {
   if(error) return `error: ${error}`;
   const {title, description, image, _id} = data.dates[Math.floor(Math.random() * data.dates.length)]
 
+  
+
   return (
     <div className={classes.imageContainer}>
       <h1 className={classes.title}>{title}</h1>

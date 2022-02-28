@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -43,13 +43,10 @@ const useStyles = makeStyles({
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
-    color: "#CBAB5B",
-    // #ff6d75
+    color: "#CBAB5B"
   },
   "& .MuiRating-iconHover": {
     color: "#A87901",
-
-
   },
 });
 
@@ -66,10 +63,12 @@ export default function SingleCard(props) {
   const randomVal = Math.ceil(Math.random() * 5)
   const [value, setValue] = useState(randomVal);
   const [hover, setHover] = useState(-1);
-  const { image, title, description, id } = props
+  const { image, title, description, id, refetch } = props
   const [saveDate, { loading, error, data }] = useMutation(SAVE_DATE)
   const [addReview, { loading: reviewLoading, error: reviewError, data: reviewData }] = useMutation(ADD_REVIEW)
   const [removeDate, { loading: removeLoading, error: removeError, data: removeData }] = useMutation(REMOVE_DATE)
+
+
 
   const handleSave = async event => {
     event.preventDefault()
@@ -94,6 +93,7 @@ export default function SingleCard(props) {
     } catch (error) {
       console.log(error)
     }
+    refetch()
   }
   const handleReview = async (newValue) => {
     try {
@@ -108,15 +108,8 @@ export default function SingleCard(props) {
     }
   }
   const location = useLocation();
-
-  useEffect(() => {
-  }, [location])
-
-
   const landingLocation = useLocation();
 
-  useEffect(() => {
-  }, [landingLocation])
 
   return (
     <div>
