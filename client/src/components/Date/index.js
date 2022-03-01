@@ -81,6 +81,7 @@ export default function SingleCard(props) {
     } catch (error) {
       console.log(error)
     }
+    refetch()
   }
   const handleDel = async event => {
     event.preventDefault()

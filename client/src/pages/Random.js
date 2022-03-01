@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
 import Stars from "../assets/stars.png";
@@ -31,19 +31,20 @@ imageContainer: {
 
 export default function SingleDateRandom() {
   const classes = useStyles();
-  const { loading, error, data } = useQuery(DATES);
+  const { loading, error, data, refetch } = useQuery(DATES, {
+    fetchPolicy: 'network-only',
+});
   if(loading) return null;
   if(error) return `error: ${error}`;
   const {title, description, image, _id} = data.dates[Math.floor(Math.random() * data.dates.length)]
-
   
 
   return (
     <div className={classes.imageContainer}>
       <h1 className={classes.title}>{title}</h1>
-      <Date title={title} description={description} image={image} key={_id} id={_id}></Date>
+      <Date title={title} description={description} image={image} key={_id} id={_id} refetch={refetch}></Date>
       <div className={classes.randomButton}>
-        <Button variant="contained" size="large" onClick = {() => window.location.reload()}>
+        <Button variant="contained" size="large" onClick={() => window.location.reload()}>
           Random
         </Button>
       </div>

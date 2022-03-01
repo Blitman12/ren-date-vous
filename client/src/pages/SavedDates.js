@@ -21,7 +21,6 @@ export default function SavedDates() {
     const classes = useStyles();
     const {loading, error, data, refetch} = useQuery(GET_SAVEDATES, {
         fetchPolicy: 'network-only',
-
     })
 
     if (loading) {
