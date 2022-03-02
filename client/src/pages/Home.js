@@ -45,14 +45,12 @@ const useStyles = makeStyles({
 export default function Home() {
   const classes = useStyles();
 
-  const { loading, error, data } = useQuery(GET_SAVEDATES)
+  const { loading, data } = useQuery(GET_SAVEDATES)
 
   if (loading) {
     return <div>loading...</div>
   }
 
-  
-  
 
   return (
     <div>

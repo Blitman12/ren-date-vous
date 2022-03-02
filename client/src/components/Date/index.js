@@ -68,8 +68,6 @@ export default function SingleCard(props) {
   const [addReview, { loading: reviewLoading, error: reviewError, data: reviewData }] = useMutation(ADD_REVIEW)
   const [removeDate, { loading: removeLoading, error: removeError, data: removeData }] = useMutation(REMOVE_DATE)
 
-
-
   const handleSave = async event => {
     event.preventDefault()
     try {
@@ -108,9 +106,8 @@ export default function SingleCard(props) {
       console.log(error)
     }
   }
-  const location = useLocation();
-  const landingLocation = useLocation();
 
+  const location = useLocation();
 
   return (
     <div>

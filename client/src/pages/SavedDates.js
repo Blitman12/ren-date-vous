@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
 export default function SavedDates() {
     const classes = useStyles();
-    const {loading, error, data, refetch} = useQuery(GET_SAVEDATES, {
+    const {loading, data, refetch} = useQuery(GET_SAVEDATES, {
         fetchPolicy: 'network-only',
     })
 

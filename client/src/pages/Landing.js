@@ -43,9 +43,7 @@ const useStyles = makeStyles({
         height: "500px",
         border: "solid 2px #805373",
         borderRadius: "25%",
-        boxShadow: "#A2B3D6 10px 10px 100px 30px",
-        // rgb(75, 80, 90)
-        // #d299ac
+        boxShadow: "#A2B3D6 10px 10px 100px 30px"
     },
     loginRegister: {
         width: "25%",
