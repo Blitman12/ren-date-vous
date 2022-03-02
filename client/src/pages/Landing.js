@@ -75,6 +75,7 @@ const Landing = () => {
     const classes = useStyles();
     const [openLogin, setOpenLogin] = useState(false);
     const [openRegister, setOpenRegister] = useState(false);
+    const [customError, setCustomError] = useState()
     const handleOpenLogin = () => setOpenLogin(true);
     const handleCloseLogin = () => setOpenLogin(false);
     const handleOpenRegister = () => setOpenRegister(true);
@@ -91,6 +92,7 @@ const Landing = () => {
             ...loginForm,
             [name]: value
         })
+        setCustomError("")
     }
 
     const handleRegister = event => {
@@ -99,6 +101,7 @@ const Landing = () => {
             ...registerForm,
             [name]: value
         })
+        setCustomError("")
     }
 
     const handleLoginSubmit = async event => {
@@ -111,6 +114,12 @@ const Landing = () => {
             Auth.login(data.loginUser.token)
         } catch (error) {
             console.error(error)
+            let whatError = error.message
+            if (whatError === "Incorrect credentials") {
+                setCustomError("Email or Password is incorrect")
+            } else {
+                setCustomError("An error occurred")
+            }
         }
     }
 
@@ -120,10 +129,15 @@ const Landing = () => {
             const { data } = await addUser({
                 variables: { ...registerForm }
             })
-            console.log(data)
             Auth.login(data.addUser.token)
         } catch (error) {
             console.error(error)
+            let whatError = error.message.split(" ")
+            if (whatError[0] === "E11000") {
+                setCustomError("This email has already been used")
+            } else {
+                setCustomError("An error occurred")
+            }
         }
     }
 
@@ -200,7 +214,7 @@ const Landing = () => {
                         <Button variant="contained" className={classes.buttons} onClick={handleLoginSubmit}>
                             Lets go
                         </Button>
-                        {loginError && <p>Login Error: double check your credentials and try again</p>}
+                        {loginError && <p style={{ color: "red" }}>{customError}</p>}
                     </div>
                 </Box>
             </Modal>
@@ -223,7 +237,7 @@ const Landing = () => {
                         <TextField
                             id="outlined-basic"
                             label="Username"
-                            type="username" 
+                            type="username"
                             name="username"
                             onChange={handleRegister}
                             value={registerForm.username}
@@ -233,7 +247,7 @@ const Landing = () => {
                         <TextField
                             id="outlined-basic"
                             label="Email"
-                            type="email" 
+                            type="email"
                             name="email"
                             onChange={handleRegister}
                             value={registerForm.email}
@@ -243,7 +257,7 @@ const Landing = () => {
                         <TextField
                             id="outlined-basic"
                             label="Password"
-                            type="password" 
+                            type="password"
                             name="password"
                             onChange={handleRegister}
                             value={registerForm.password}
@@ -253,7 +267,7 @@ const Landing = () => {
                         <Button variant="contained" className={classes.buttons} onClick={handleRegisterSubmit}>
                             Signup
                         </Button>
-                        {registerError && <p>An error occurred: please try again</p>}
+                        {registerError && <p style={{ color: "red" }}>{customError}</p>}
                     </div>
                 </Box>
             </Modal>
