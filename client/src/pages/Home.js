@@ -45,7 +45,9 @@ const useStyles = makeStyles({
 export default function Home() {
   const classes = useStyles();
 
-  const { loading, data } = useQuery(GET_SAVEDATES)
+  const { loading, data, refetch } = useQuery(GET_SAVEDATES, {
+    fetchPolicy: 'network-only'
+})
 
   if (loading) {
     return <div>loading...</div>
@@ -75,7 +77,8 @@ export default function Home() {
         </div>
         <div className={classes.dateContainer}>
           {data && data.savedDates.slice(0, 3).map(date => {
-            return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} />
+            const review = date.reviews[0]?.rating || 0
+            return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} refetch={refetch} review={review}/>
           })}
         </div>
       </div>
