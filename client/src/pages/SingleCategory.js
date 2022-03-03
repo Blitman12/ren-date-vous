@@ -4,8 +4,6 @@ import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   title: {
@@ -37,13 +35,6 @@ export default function SingleCategory() {
   return (
     <div>
       <h1 className={classes.title}> {category} </h1>
-      <div className={classes.button}>
-        <Link to="/categories">
-          <Button variant="contained" size="large">
-            Back
-          </Button>
-        </Link>
-      </div>
       <div className={classes.dateContainer}>
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {
