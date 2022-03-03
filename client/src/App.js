@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
 import Landing from './pages/Landing';
-import Categories from './pages/Categories'
 import Random from './pages/Random';
 import SingleCategory from './pages/SingleCategory'
 import Navbar from './components/Navbar';
@@ -69,7 +68,6 @@ function App() {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/categories" component={Categories} />
             <Route exact path="/random" component={Random} />
             <Route exact path="/category/:category" component={SingleCategory} />
             <Route exact path="/saved" component={SavedDates} />
