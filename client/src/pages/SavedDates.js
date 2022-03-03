@@ -26,7 +26,7 @@ export default function SavedDates() {
     if (loading) {
         return <div>loading...</div>
     }
-
+    
     return (
         <div>
             <h1 className={classes.title}> Saved Dates</h1>

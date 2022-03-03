@@ -69,7 +69,7 @@ const team = [
 export default function About() {
   const classes = useStyles();
   return (
-   <div>
+    <div>
       <h1 className={classes.title}> Meet the RenDATEvous Team </h1>
       <Typography className={classes.text}>
         Welcome to RenDATEvous! Have you and your significant other ever been
@@ -111,6 +111,6 @@ export default function About() {
             })}
         </div>
       </h3>
-      </div>
+    </div>
   );
 }

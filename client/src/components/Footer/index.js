@@ -27,13 +27,13 @@ export default function Footer() {
   return (
     <footer className={classes.container}>
       <BottomNavigation
-        sx={{ width: "auto", height: "auto"}}
+        sx={{ width: "auto", height: "auto" }}
         className={classes.footer}
       >
         <Typography variant="h7" component="div">
           <FavoriteBorderIcon fontSize="small" />
           RenDATEvous Team. All Rights Reserved. Copyright &copy; 2022-
-         <script>document.write(new Date().getFullYear())</script>
+          <script>document.write(new Date().getFullYear())</script>
         </Typography>
       </BottomNavigation>
     </footer>

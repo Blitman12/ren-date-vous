@@ -37,7 +37,7 @@ const Navbar = () => {
                 <Button color="inherit">Home</Button>
               </Link>
             </Typography>
-            <Grid xs={2}>
+            <Grid>
               {Auth.loggedIn() ?
                 <Link
                   style={{ textDecoration: "none", color: "white" }}

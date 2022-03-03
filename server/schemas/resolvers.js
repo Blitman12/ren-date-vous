@@ -22,7 +22,7 @@ const resolvers = {
         savedDates: async (parent, args, context) => {
             if (context.user) {
                 const currentUser = await User.findById(context.user._id).populate("savedDates")
-
+                    
                 // TODO: in future change to use a mongoose populate method instead of mutating data
                 return currentUser.savedDates.map(date => {
                     date.reviews = date.reviews.filter(review => review.username === context.user.username)
