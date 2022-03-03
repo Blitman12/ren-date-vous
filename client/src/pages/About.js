@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
-import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import Member from "../components/Member";
 import Jen from "../assets/jen.png";
 import Nick from "../assets/nick.jpg";
@@ -28,8 +28,8 @@ const useStyles = makeStyles({
     marginTop: 60
   },
   text: {
-    marginLeft: 50,
-    marginRight: 50,
+    marginLeft: 60,
+    marginRight: 60,
     fontSize: 20,
     textAlign: "center"
   },
@@ -69,9 +69,9 @@ const team = [
 export default function About() {
   const classes = useStyles();
   return (
-    <Box sx={{  }}>
+   <div>
       <h1 className={classes.title}> Meet the RenDATEvous Team </h1>
-      <p className={classes.text}>
+      <Typography className={classes.text}>
         Welcome to RenDATEvous! Have you and your significant other ever been
         sitting on the couch bored out of your minds? You finally get some alone
         time together and you want to go out but have no idea what to do...
@@ -93,7 +93,7 @@ export default function About() {
         some exciting new features for those who have accounts on our website.
         So keep your eyes peeled! At RenDATEvous, we will take your next date
         night to places you have never been before!
-      </p>
+      </Typography>
       <h3 className={classes.directions}>
         Click our Images!
         <div className={classes.container}>
@@ -111,6 +111,6 @@ export default function About() {
             })}
         </div>
       </h3>
-    </Box>
+      </div>
   );
 }
