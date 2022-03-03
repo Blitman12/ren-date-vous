@@ -60,10 +60,10 @@ const labels = {
 
 export default function SingleCard(props) {
   const classes = useStyles();
+  const { image, title, description, id, refetch, review } = props
   const randomVal = Math.ceil(Math.random() * 5)
-  const [value, setValue] = useState(randomVal);
+  const [value, setValue] = useState(review);
   const [hover, setHover] = useState(-1);
-  const { image, title, description, id, refetch } = props
   const [saveDate, { loading, error, data }] = useMutation(SAVE_DATE)
   const [addReview, { loading: reviewLoading, error: reviewError, data: reviewData }] = useMutation(ADD_REVIEW)
   const [removeDate, { loading: removeLoading, error: removeError, data: removeData }] = useMutation(REMOVE_DATE)
@@ -176,8 +176,9 @@ export default function SingleCard(props) {
                 aria-label="menu"
                 sx={{ mr: 2 }}
                 className={classes.icon}
+                onClick={handleDel}
               >
-                <DeleteIcon onClick={handleDel} />
+                <DeleteIcon  />
               </IconButton> : <IconButton
                 size="large"
                 edge="start"
@@ -185,8 +186,9 @@ export default function SingleCard(props) {
                 aria-label="menu"
                 sx={{ mr: 2 }}
                 className={classes.icon}
+                onClick={handleSave}
               >
-                <SaveIcon onClick={handleSave} />
+                <SaveIcon  />
               </IconButton>}
             </CardActions>
           </Card>

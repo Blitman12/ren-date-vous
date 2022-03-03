@@ -45,10 +45,10 @@ export default function SingleDateRandom() {
   }, [loading, data])
 
 
-  const handleRandomDate = () => {
+  const randomDate = () => {
     if (currentDate) {
-      const {title, description, image, _id} = currentDate
-      return <Date title={title} description={description} image={image} key={_id} id={_id} refetch={refetch}></Date>
+      const {title, description, image, _id, rating} = currentDate
+      return <Date title={title} description={description} image={image} key={_id} id={_id} refetch={refetch} review={rating}></Date>
     }
   }
 
@@ -59,7 +59,7 @@ export default function SingleDateRandom() {
   return (
     <div className={classes.imageContainer}>
       <h1 className={classes.title}>Random Date</h1>
-      {handleRandomDate()}
+      {randomDate()}
       <div className={classes.randomButton}>
         <Button variant="contained" size="large" onClick={() => setCurrentDate(aRandomDate)}>
           Random

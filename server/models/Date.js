@@ -23,20 +23,21 @@ const dateSchema = new Schema({
 },
     {
         toJSON: {
-            virtuals: true,
+            virtuals: true
         },
     }
 );
 
 dateSchema.virtual('reviewCount').get(function () {
+    console.log(this.reviews.length)
     return this.reviews.length;
 });
 
 dateSchema.virtual('rating').get(function () {
     const count = this.reviews.length
     const sum = this.reviews.reduce((total, review) => total + review.rating, 0)
-
-    return sum / count
+    
+    return (Math.floor(sum / count)) || 0
 });
 
 const Date = model("Date", dateSchema)

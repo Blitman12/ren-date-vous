@@ -20,20 +20,21 @@ const useStyles = makeStyles({
 export default function SavedDates() {
     const classes = useStyles();
     const {loading, data, refetch} = useQuery(GET_SAVEDATES, {
-        fetchPolicy: 'network-only',
+        fetchPolicy: 'network-only'
     })
 
     if (loading) {
         return <div>loading...</div>
     }
 
-
     return (
         <div>
             <h1 className={classes.title}> Saved Dates</h1>
             <div className={classes.dateContainer}>
                 {data && data.savedDates.map(date => {
-                    return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} refetch={refetch}/>
+                    //* ? = optional chaining: checks if rating exists in the chain, otherwise will be 0
+                    const review = date.reviews[0]?.rating || 0
+                    return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} review={review} refetch={refetch} />
                 })}
             </div>
         </div>
