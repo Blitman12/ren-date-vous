@@ -59,7 +59,8 @@ const useStyles = makeStyles({
     textAlign: "center",
   },
   introText: {
-    padding: "36px",
+    padding: "35px",
+    marginTop: 40,
     textAlign: "center",
   },
   introTextContainer: {
