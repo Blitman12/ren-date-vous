@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import Date from '../components/Date'
 import { useQuery } from '@apollo/client';
 import { GET_SAVEDATES } from '../utils/queries';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import Auth from '../utils/auth';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
@@ -47,7 +47,10 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const classes = useStyles();
-
+  const history = useHistory()
+  if (!Auth.loggedIn()) {
+    history.push("/")
+  }
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

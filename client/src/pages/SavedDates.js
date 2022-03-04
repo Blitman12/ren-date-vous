@@ -3,6 +3,9 @@ import Date from '../components/Date';
 import { makeStyles } from '@mui/styles'
 import { useQuery } from '@apollo/client';
 import { GET_SAVEDATES } from '../utils/queries';
+import Auth from '../utils/auth';
+import { useHistory } from 'react-router-dom';
+
 
 const useStyles = makeStyles({
     title: {
@@ -19,6 +22,10 @@ const useStyles = makeStyles({
 
 export default function SavedDates() {
     const classes = useStyles();
+    const history = useHistory()
+    if (!Auth.loggedIn()) {
+        history.push("/")
+    }
     const {loading, data, refetch} = useQuery(GET_SAVEDATES, {
         fetchPolicy: 'network-only'
     })

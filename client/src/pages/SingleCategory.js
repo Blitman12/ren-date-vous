@@ -3,7 +3,8 @@ import Date from "../components/Date";
 import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
-import { useParams } from "react-router-dom";
+import {  useHistory, useParams } from "react-router-dom";
+import Auth from '../utils/auth';
 
 const useStyles = makeStyles({
   title: {
@@ -22,7 +23,11 @@ const useStyles = makeStyles({
 
 export default function SingleCategory() {
   const classes = useStyles();
+  const history = useHistory()
   const { category } = useParams();
+  if (!Auth.loggedIn()) {
+    history.push("/")
+  }
 
   const { loading, error, data } = useQuery(GET_CATDATES, {
     variables: {

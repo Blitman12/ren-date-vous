@@ -5,6 +5,9 @@ import Stars from "../assets/stars.png";
 import { useQuery } from "@apollo/client";
 import { DATES } from "../utils/queries";
 import Date from "../components/Date";
+import Auth from '../utils/auth';
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles({
   title: {
@@ -31,6 +34,10 @@ const useStyles = makeStyles({
 
 export default function SingleDateRandom() {
   const classes = useStyles();
+  const history = useHistory()
+  if (!Auth.loggedIn()) {
+      history.push("/")
+  }
   const { loading, error, data, refetch } = useQuery(DATES, {
     fetchPolicy: 'network-only',
   });

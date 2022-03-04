@@ -3,7 +3,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import date from "../assets/romantic.jpg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import Auth from '../utils/auth';
 
 const useStyles = makeStyles({
   buttonContainer: {
@@ -31,6 +32,10 @@ const useStyles = makeStyles({
 
 export default function Categories() {
   const classes = useStyles();
+  const history = useHistory()
+  if (!Auth.loggedIn()) {
+      history.push("/")
+  }
   return (
     <div className={classes.imageContainer}>
       <div>
