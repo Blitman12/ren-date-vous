@@ -111,7 +111,6 @@ const Landing = () => {
       const { data } = await login({
         variables: { ...loginForm },
       });
-      console.log(data);
       Auth.login(data.loginUser.token);
     } catch (error) {
       console.error(error);

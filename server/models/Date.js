@@ -29,7 +29,6 @@ const dateSchema = new Schema({
 );
 
 dateSchema.virtual('reviewCount').get(function () {
-    console.log(this.reviews.length)
     return this.reviews.length;
 });
 

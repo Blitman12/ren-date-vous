@@ -44,7 +44,6 @@ export default function SingleCategory() {
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {
             const { title, description, image, _id, rating } = date;
-            console.log(rating)
             return (
               <Date
                 key={_id}
