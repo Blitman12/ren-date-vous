@@ -251,209 +251,223 @@ const dateIdeas = [
     image: art,
     reviews: []
   },
-  // {
-  //   title: 'Karaoke',
-  //   description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
-  //   categories: ['Indoors'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: 'Hot Air Balloon Ride',
-  //   description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
-  //   categories: ['Romantic'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: 'Antiquing',
-  //   description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
-  //   categories: ['Indoors'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: 'Rock Climbing',
-  //   description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
-  //   categories: ['Outdoors'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: 'Attend a Local Play',
-  //   description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
-  //   categories: ['Indoors'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: "Build a Fire & Make S'mores",
-  //   description: "Get cozy on a cold night, warm up with a fire and some s'mores",
-  //   categories: ['Romantic'],
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
-  // {
-  //   title: '',
-  //   description: '',
-  //   categories: '',
-  //   image: '',
-  //   reviews: []
-  // },
+  {
+    title: 'Karaoke',
+    description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
+    categories: ['Indoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Hot Air Balloon Ride',
+    description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
+    categories: ['Romantic'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Antiquing',
+    description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
+    categories: ['Indoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Rock Climbing',
+    description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Attend a Local Play',
+    description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
+    categories: ['Indoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: "Build a Fire & Make S'mores",
+    description: "Get cozy on a cold night, warm up with a fire and some s'mores",
+    categories: ['Romantic'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Miniature Golf',
+    description: 'Known by many names, minigolf, mini-putt, goofy golf, crazy golf, or putt-putt, but no matter what you call it, we all know the game. So grab your club and give this date a wack!',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Smores',
+    description: 'Enjoy some nice Smores by your fire pit or make them in your oven. Either way once these are made you will have a tasty treat to eat while you cuddle and share your days events with one another.',
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Game Night!',
+    description: "You choose the theme. Go classic with either board games, card games or newer with video Games. Can't go wrong with good ol' Mario Kart! Better yet mix it up for hours of fun.",
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Go for a Bike Ride',
+    description: "Go for a bike ride around the neighborhood or somewhere new! Don't own a bike, then rent one! Better yet, rent a Tandem Bike and learn to work as a team!",
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Camping',
+    description: 'Want your date to last longer then a night! Then go camping, explore the outdoors. To make it even more personal, leave your electronics at home!',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Lights Out',
+    description: "Go back to the 1800's and experience life without electricity! Have a no-tech evening. Pretend your power is out! Need help on what to do? Dinner by CandleLight, Tell Ghost Stories, Glow Stick Jewelry, Truth Or Dare, Card/Board Games, TALK, etc!",
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Slow Dance',
+    description: 'Have an intimate evening at home! Dim the lights, turn on some slow music and dance the evening away!',
+    categories: ['Romantic'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Hit the Road for an Unplanned Day Trip',
+    description: "Don't google just go! If there is a city near by you never been to but have always wondered what's there? Now's the time to check it out!",
+    categories: ['Wild'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Play Tourist in Your Own City',
+    description: "Go to all the tourist location's in our City!",
+    categories: ['Wild'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'See a Concert',
+    description: 'Check out your local concerts and find one to attend!',
+    categories: ['Wild'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Swap Hobbies',
+    description: 'Get to know your partners interests more by doing them! Split the day up doing each others favorite thing!',
+    categories: ['Indoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Metal Detector',
+    description: 'Buy or rent a metal detector and go see what you can find.',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Water Park',
+    description: 'Find a water park or local pull and enjoy a nice refreshing swim.',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Start a garden',
+    description: 'Start a garden together.',
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Disc Golf',
+    description: 'Find a place to play some Disc Golf.',
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Legos',
+    description: 'Check out the show Lego Masters and then see if you too can become a master! Buy a set and have some fun.',
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Cardboard War',
+    description: 'Make your own cardboard weapons/ armor, then fight and see who wins!',
+    categories: ['Home'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Pottery',
+    description: 'Take some pottery classes, or go to a paint your own pottery store',
+    categories: ['Indoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Zoo',
+    description: "Who doesn't love the zoo! Take a trip to your local zoo and admire all the animals",
+    categories: ['Outdoors'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Spa Night',
+    description: 'Hit up the drugstore for face masks, mani-pedi supplies and massage oil for a DIY pampering session that will improve your bond and your skin. ',
+    categories: ['Romantic'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Mexican Food',
+    description: 'Go to any restaurant/ fast food that service Mexican Food',
+    categories: ['Food'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Italian Food',
+    description: 'Find an Italian restaurant, and enjoy a delicious Dinner! Or get some Gelato! ',
+    categories: ['Food'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Chinese Food',
+    description: 'Get some chinese food to satisfy that hunger!',
+    categories: ['Food'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'Thai Food',
+    description: 'Find A Thai restaurant near you!',
+    categories: ['Food'],
+    image: '',
+    reviews: []
+  },
+  {
+    title: 'BBQ Food',
+    description: "Don't be afraid to get dirty as you dive into some amazing tender BBQ!",
+    categories: ['Food'],
+    image: '',
+    reviews: []
+  }
 ];
 
 mongoose.connect(
