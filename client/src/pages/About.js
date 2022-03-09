@@ -42,7 +42,7 @@ const team = [
     description:
       "Recent graduate from a Full Stack Boot Camp from UofA along with a Bachelors in Nursing. Happily married with two 'skin' children (hairless cats)",
     github: "https://github.com/Blitman12",
-    linkedin: ""
+    linkedin: "https://www.linkedin.com/in/bradleylitman/"
   },
   {
     img: `${Jen}`,
@@ -58,7 +58,7 @@ const team = [
     description:
       "Luke is a recent graduate of the University of Arizona Full-Stack Coding Boot Camp and holds a BA in English. When he is not coding he can be found exploring the latest trail systems in Arizona's gorgeous state parks.",
     github: "https://github.com/lukejohnsen",
-    linkedin: ""
+    linkedin: "https://www.linkedin.com/in/lukejohnsen/"
   },
   {
     img: `${Nick}`,
@@ -66,7 +66,7 @@ const team = [
     description:
       "I enjoy anything regarding travel and space! Arizona native, recently graduated University of Arizona's coding Boot Camp.",
     github: "https://github.com/Nkepers",
-    linkedin: ""
+    linkedin: "https://www.linkedin.com/in/nicholas-kepers/"
   },
 ];
 
@@ -110,6 +110,7 @@ export default function About() {
                   description={member.description}
                   img={member.img}
                   github={member.github}
+                  linkedin={member.linkedin}
                 />
               );
             })}

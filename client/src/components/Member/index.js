@@ -64,9 +64,9 @@ function About(props) {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             {description}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            Visit my <a href={github} target="__blank">GitHub</a> 
-                            <a href={linkedin} target="__blank"> and LinkedIn</a> 
+                        <Typography id="modal-modal-description" sx={{ mt: 2}}>
+                       Visit my <a style={{ textDecoration: "none" }} href={github} target="__blank">GitHub </a> and 
+                            <a style={{ textDecoration: "none" }} href={linkedin} target="__blank"> LinkedIn</a> 
                         </Typography>
                     </Box>
                 </Modal>
