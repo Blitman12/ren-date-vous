@@ -9,7 +9,7 @@ import Auth from '../utils/auth';
 const useStyles = makeStyles({
   title: {
     color: "white",
-    textAlign: "center",
+    textAlign: "center"
   },
   dateContainer: {
     display: "flex",

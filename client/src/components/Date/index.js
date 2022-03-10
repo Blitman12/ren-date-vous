@@ -61,12 +61,12 @@ const labels = {
 export default function SingleCard(props) {
   const classes = useStyles();
   const { image, title, description, id, refetch, review } = props
-  const randomVal = Math.ceil(Math.random() * 5)
   const [value, setValue] = useState(review);
   const [hover, setHover] = useState(-1);
-  const [saveDate, { loading, error, data }] = useMutation(SAVE_DATE)
-  const [addReview, { loading: reviewLoading, error: reviewError, data: reviewData }] = useMutation(ADD_REVIEW)
-  const [removeDate, { loading: removeLoading, error: removeError, data: removeData }] = useMutation(REMOVE_DATE)
+  const [savedError, setSavedError] = useState();
+  const [saveDate] = useMutation(SAVE_DATE)
+  const [addReview] = useMutation(ADD_REVIEW)
+  const [removeDate] = useMutation(REMOVE_DATE)
 
   const handleSave = async event => {
     event.preventDefault()
@@ -78,6 +78,12 @@ export default function SingleCard(props) {
       })
     } catch (error) {
       console.log(error)
+      let whatError = error.message
+      if (whatError === "Date is already saved") {
+        setSavedError("This date is already saved")
+      } else {
+        setSavedError("An error occurred")
+      }
     }
     refetch()
   }
@@ -110,7 +116,7 @@ export default function SingleCard(props) {
   const location = useLocation();
 
   return (
-    <div>
+    <div onBlur={() => setSavedError("")}>
       <Box>
         <div className={classes.cardsContainer}>
           <Card sx={{ maxWidth: 345 }} className={classes.cards} >
@@ -169,29 +175,6 @@ export default function SingleCard(props) {
                   </Box>
                 )}
               </Box>
-              {
-                // location.pathname === "/saved" ? <IconButton
-                //   size="large"
-                //   edge="start"
-                //   color="inherit"
-                //   aria-label="menu"
-                //   sx={{ mr: 2 }}
-                //   className={classes.icon}
-                //   onClick={handleDel}
-                // >
-                //   <DeleteIcon  />
-                // </IconButton> : <IconButton
-                //   size="large"
-                //   edge="start"
-                //   color="inherit"
-                //   aria-label="menu"
-                //   sx={{ mr: 2 }}
-                //   className={classes.icon}
-                //   onClick={handleSave}
-                // >
-                //   <SaveIcon  />
-                // </IconButton>
-              }
               {(() => {
                 if (location.pathname === "/saved") {
                   return (
@@ -213,17 +196,20 @@ export default function SingleCard(props) {
                   )
                 } else {
                   return (
-                    <IconButton
-                      size="large"
-                      edge="start"
-                      color="inherit"
-                      aria-label="menu"
-                      sx={{ mr: 2 }}
-                      className={classes.icon}
-                      onClick={handleSave}
-                    >
-                      <SaveIcon />
-                    </IconButton>
+                    <>
+                      <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                        className={classes.icon}
+                        onClick={handleSave}
+                      >
+                        <SaveIcon />
+                      </IconButton>
+                      <p>{savedError}</p>
+                    </>
                   )
                 }
               })
