@@ -29,10 +29,11 @@ export default function SingleCategory() {
     history.push("/")
   }
 
-  const { loading, error, data } = useQuery(GET_CATDATES, {
+  const { loading, error, data, refetch } = useQuery(GET_CATDATES, {
     variables: {
       category: category,
     },
+    fetchPolicy: 'network-only'
   });
 
   if (loading) return null;
@@ -52,6 +53,7 @@ export default function SingleCategory() {
                 image={image}
                 review={rating}
                 id={_id}
+                refetch={refetch}
               />
             );
           })}

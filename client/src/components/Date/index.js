@@ -169,27 +169,65 @@ export default function SingleCard(props) {
                   </Box>
                 )}
               </Box>
-              {location.pathname === "/saved" ? <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-                className={classes.icon}
-                onClick={handleDel}
-              >
-                <DeleteIcon  />
-              </IconButton> : <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-                className={classes.icon}
-                onClick={handleSave}
-              >
-                <SaveIcon  />
-              </IconButton>}
+              {
+                // location.pathname === "/saved" ? <IconButton
+                //   size="large"
+                //   edge="start"
+                //   color="inherit"
+                //   aria-label="menu"
+                //   sx={{ mr: 2 }}
+                //   className={classes.icon}
+                //   onClick={handleDel}
+                // >
+                //   <DeleteIcon  />
+                // </IconButton> : <IconButton
+                //   size="large"
+                //   edge="start"
+                //   color="inherit"
+                //   aria-label="menu"
+                //   sx={{ mr: 2 }}
+                //   className={classes.icon}
+                //   onClick={handleSave}
+                // >
+                //   <SaveIcon  />
+                // </IconButton>
+              }
+              {(() => {
+                if (location.pathname === "/saved") {
+                  return (
+                    <IconButton
+                      size="large"
+                      edge="start"
+                      color="inherit"
+                      aria-label="menu"
+                      sx={{ mr: 2 }}
+                      className={classes.icon}
+                      onClick={handleDel}
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  )
+                } else if (location.pathname === "/home") {
+                  return (
+                    null
+                  )
+                } else {
+                  return (
+                    <IconButton
+                      size="large"
+                      edge="start"
+                      color="inherit"
+                      aria-label="menu"
+                      sx={{ mr: 2 }}
+                      className={classes.icon}
+                      onClick={handleSave}
+                    >
+                      <SaveIcon />
+                    </IconButton>
+                  )
+                }
+              })
+                ()}
             </CardActions>
           </Card>
         </div>
