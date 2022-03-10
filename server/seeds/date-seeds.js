@@ -41,7 +41,7 @@ const chinese = "/images/chinese.jpg";
 const concert = "/images/concert.jpg";
 const detector = "/images/detector.jpg";
 const disc = "/images/disc.jpg";
-const games = "images/games.jpg";
+const games = "/images/games.jpg";
 const garden = "/images/garden.jpg";
 const hobbies = "/images/hobbies.jpg";
 const balloon = "/images/balloon.jpg";
@@ -67,427 +67,427 @@ const dateIdeas = [
   {
     title: 'Aquarium',
     description: 'Go to an aquarium and take at least 5 selfies!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: aquarium,
     reviews: []
   },
   {
     title: 'Theatres',
     description: 'Choose a play or a movie!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: theater,
     reviews: []
   },
   {
     title: 'Museum',
     description: 'Go to a local Museum!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: museum,
     reviews: []
   },
   {
     title: 'Hiking',
     description: 'Go on a hike and take a few scenic pictures!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: hiking,
     reviews: []
   },
   {
     title: 'Dinner',
     description: 'Keep it classic and classy yet daring, find a restaurant nearby neither person has tried!',
-    categories: ['Food'],
+    categories: ['food'],
     image: dinner,
     reviews: []
   },
   {
     title: 'Cooking Classes',
     description: 'Find a local cooking class and learn a new recipe!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: cookingClasses,
     reviews: []
   },
   {
     title: 'Star Gazing',
     description: 'On a clear night, lay outside and relax with a view of the stars.',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: StarGazing,
     reviews: []
   },
   {
     title: 'Picnic',
     description: "Gather some lunch favorite's and go enjoy a nice picnic!",
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: picnic,
     reviews: []
   },
   {
     title: 'Random Meal',
     description: 'Find a random recipe you have never made or had before and enjoy some new food right in your kitchen!',
-    categories: ['Food'],
+    categories: ['food'],
     image: cookingDinner,
     reviews: []
   },
   {
     title: 'Pillow Fort',
     description: 'Who can build the better fort? You decide! Build a pillow fort either with, or against, one another. May the odds be ever in your favor.',
-    categories: ['Home'],
+    categories: ['home'],
     image: pillowFort,
     reviews: []
   },
   {
     title: 'Horse Back Riding',
     description: 'Find a local business and go on a trail on horseback!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: horseback,
     reviews: []
   },
   {
     title: 'Peaceful Walk',
     description: 'Go on a peaceful walk.',
-    categories: ['Romantic'],
+    categories: ['romantic'],
     image: walk,
     reviews: []
   },
   {
     title: 'Bowling',
     description: 'Who is the better bowler? One way to find out!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: bowling,
     reviews: []
   },
   {
     title: 'Kayaking',
     description: 'Go kayaking and enjoy nature!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: kayaking,
     reviews: []
   },
   {
     title: 'Sky Diving',
     description: 'Go for the thrill of a lifetime! Please do remember to pull the parachute chord.',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: skydiving,
     reviews: []
   },
   {
     title: 'Ice Skating',
     description: 'Go shred the ice! Bring a jacket it is a bit chilly.',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: iceSkating,
     reviews: []
   },
   {
     title: 'Fishing',
     description: 'Go put some food on your table with fishing! Or release it, whichever is legal.',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: fishing,
     reviews: []
   },
   {
     title: 'Wine Tasting',
     description: 'Go taste some new wine at a local orchard, restaurant, or event. Drink responsibly!',
-    categories: 'Romantic',
+    categories: 'romantic',
     image: wine,
     reviews: []
   },
   {
     title: 'Paint Classes',
     description: 'Ever wanted to learn to paint? Find your local painting class! P.S: May contain alcohol.',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: paint,
     reviews: []
   },
   {
     title: 'Axe Throwing',
     description: 'Let loose some pent up work frustration! See who can throw an axe the best, safely of course.',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: axe,
     reviews: []
   },
   {
     title: 'Shooting',
     description: 'Go shoot some guns, whether owned or rented! Make sure you wear ear/eye protection!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: shooting,
     reviews: []
   },
   {
     title: 'Archery',
     description: 'Time to tap into your inner medieval ranger! Go shoot a bow, whether you own one or rent one!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: archery,
     reviews: []
   },
   {
     title: 'Pool',
     description: 'Time to relax, go to your local water park or community pool and relax under the sun!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: pool,
     reviews: []
   },
   {
     title: 'Lazer tag',
     description: 'Who is the best at lazer tag? Time to find out!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: lazer,
     reviews: []
   },
   {
     title: 'Gym',
     description: 'Is fitness your passion? Go hit the weights and set a new PR!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: gym,
     reviews: []
   },
   {
     title: 'Arcade',
     description: 'Go to a local arcade and see how many tickets you win! Buy the other person a gift with your tickets.',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: arcade,
     reviews: []
   },
   {
     title: 'Go Karts',
     description: 'Find your local kart track and go burn some rubber!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: karts,
     reviews: []
   },
   {
     title: 'Dog Park',
     description: 'If you have dogs, time to treat them too! Go let them make new friends!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: dog,
     reviews: []
   },
   {
     title: 'Goodwill Gamble',
     description: 'Buy the other an outfit =  goodwill (and vice versa) and go to a restaurant in style! The one with the best reactions wins!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: clothing,
     reviews: []
   },
   {
     title: 'Trivia Night',
     description: 'Crack out a trivia app/game, time to see who really knows more!',
-    categories: ['Home'],
+    categories: ['home'],
     image: trivia,
     reviews: []
   },
   {
     title: 'Art Exhibit',
     description: 'Go to your local Art Exhibit and enjoy the scenery!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: art,
     reviews: []
   },
   {
     title: 'Karaoke',
     description: 'Flex your vocal skills with your special someone at a local karaoke bar!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: karaoke,
     reviews: []
   },
   {
     title: 'Hot Air Balloon Ride',
     description: 'Get up and enjoy and early-morning hot air balloon ride to enjoy the scenic views of your city!',
-    categories: ['Romantic'],
+    categories: ['romantic'],
     image: balloon,
     reviews: []
   },
   {
     title: 'Antiquing',
     description: "Find some history in your hometown by checking out the local antique shops. There's a story behind every item!",
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: antiquing,
     reviews: []
   },
   {
     title: 'Rock Climbing',
     description: 'Whether in the great outdoors or at your local climbing gym, break a sweat with someone special practicing your skills getting vertical',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: rock,
     reviews: []
   },
   {
     title: 'Attend a Local Play',
     description: "Get some culture by attending the latest theatre production at your city's local playhouse!",
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: play,
     reviews: []
   },
   {
     title: "Build a Fire & Make S'mores",
     description: "Get cozy on a cold night, warm up with a fire and some s'mores",
-    categories: ['Romantic'],
+    categories: ['romantic'],
     image: smores,
     reviews: []
   },
   {
     title: 'Miniature Golf',
     description: 'Known by many names, minigolf, mini-putt, goofy golf, crazy golf, or putt-putt, but no matter what you call it, we all know the game. So grab your club and give this date a wack!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: golf,
     reviews: []
   },
   {
     title: 'Game Night!',
     description: "You choose the theme. Go classic with either board games, card games or newer with video Games. Can't go wrong with good ol' Mario Kart! Better yet mix it up for hours of fun.",
-    categories: ['Home'],
+    categories: ['home'],
     image: games,
     reviews: []
   },
   {
     title: 'Go for a Bike Ride',
     description: "Go for a bike ride around the neighborhood or somewhere new! Don't own a bike, then rent one! Better yet, rent a Tandem Bike and learn to work as a team!",
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: bike,
     reviews: []
   },
   {
     title: 'Camping',
     description: 'Want your date to last longer then a night! Then go camping, explore the outdoors. To make it even more personal, leave your electronics at home!',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: camping,
     reviews: []
   },
   {
     title: 'Lights Out',
     description: "Go back to the 1800's and experience life without electricity! Have a no-tech evening. Pretend your power is out! Need help on what to do? Dinner by CandleLight, Tell Ghost Stories, Glow Stick Jewelry, Truth Or Dare, Card/Board Games, TALK, etc!",
-    categories: ['Home'],
+    categories: ['home'],
     image: lights,
     reviews: []
   },
   {
     title: 'Slow Dance',
     description: 'Have an intimate evening at home! Dim the lights, turn on some slow music and dance the evening away!',
-    categories: ['Romantic'],
+    categories: ['romantic'],
     image: slow,
     reviews: []
   },
   {
     title: 'Hit the Road for an Unplanned Day Trip',
     description: "Don't google just go! If there is a city near by you never been to but have always wondered what's there? Now's the time to check it out!",
-    categories: ['Wild'],
+    categories: ['wild'],
     image: road,
     reviews: []
   },
   {
     title: 'Play Tourist in Your Own City',
     description: "Go to all the tourist location's in our City!",
-    categories: ['Wild'],
+    categories: ['wild'],
     image: tourist,
     reviews: []
   },
   {
     title: 'See a Concert',
     description: 'Check out your local concerts and find one to attend!',
-    categories: ['Wild'],
+    categories: ['wild'],
     image: concert,
     reviews: []
   },
   {
     title: 'Swap Hobbies',
     description: 'Get to know your partners interests more by doing them! Split the day up doing each others favorite thing!',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: hobbies,
     reviews: []
   },
   {
     title: 'Metal Detector',
     description: 'Buy or rent a metal detector and go see what you can find.',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: detector,
     reviews: []
   },
   {
     title: 'Water Park',
     description: 'Find a water park or local pull and enjoy a nice refreshing swim.',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: waterPark,
     reviews: []
   },
   {
     title: 'Start a garden',
     description: 'Start a garden together.',
-    categories: ['Home'],
+    categories: ['home'],
     image: garden,
     reviews: []
   },
   {
     title: 'Disc Golf',
     description: 'Find a place to play some Disc Golf.',
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: disc,
     reviews: []
   },
   {
     title: 'Legos',
     description: 'Check out the show Lego Masters and then see if you too can become a master! Buy a set and have some fun.',
-    categories: ['Home'],
+    categories: ['home'],
     image: lego,
     reviews: []
   },
   {
     title: 'Cardboard War',
     description: 'Make your own cardboard weapons/ armor, then fight and see who wins!',
-    categories: ['Home'],
+    categories: ['home'],
     image: cardboard,
     reviews: []
   },
   {
     title: 'Pottery',
     description: 'Take some pottery classes, or go to a paint your own pottery store',
-    categories: ['Indoors'],
+    categories: ['indoors'],
     image: pottery,
     reviews: []
   },
   {
     title: 'Zoo',
     description: "Who doesn't love the zoo! Take a trip to your local zoo and admire all the animals",
-    categories: ['Outdoors'],
+    categories: ['outdoors'],
     image: zoo,
     reviews: []
   },
   {
     title: 'Spa Night',
     description: 'Hit up the drugstore for face masks, mani-pedi supplies and massage oil for a DIY pampering session that will improve your bond and your skin. ',
-    categories: ['Romantic'],
+    categories: ['romantic'],
     image: spa,
     reviews: []
   },
   {
-    title: 'Mexican Food',
-    description: 'Go to any restaurant/ fast food that service Mexican Food',
-    categories: ['Food'],
+    title: 'Mexican food',
+    description: 'Go to any restaurant/ fast food that service Mexican food',
+    categories: ['food'],
     image: mexican,
     reviews: []
   },
   {
-    title: 'Italian Food',
+    title: 'Italian food',
     description: 'Find an Italian restaurant, and enjoy a delicious Dinner! Or get some Gelato! ',
-    categories: ['Food'],
+    categories: ['food'],
     image: italian,
     reviews: []
   },
   {
-    title: 'Chinese Food',
+    title: 'Chinese food',
     description: 'Get some chinese food to satisfy that hunger!',
-    categories: ['Food'],
+    categories: ['food'],
     image: chinese,
     reviews: []
   },
   {
-    title: 'Thai Food',
+    title: 'Thai food',
     description: 'Find A Thai restaurant near you!',
-    categories: ['Food'],
+    categories: ['food'],
     image: thai,
     reviews: []
   },
   {
     title: 'BBQ',
     description: "Don't be afraid to get dirty as you dive into some amazing tender BBQ!",
-    categories: ['Food'],
+    categories: ['food'],
     image: bbq,
     reviews: []
   }

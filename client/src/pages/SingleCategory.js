@@ -39,7 +39,7 @@ export default function SingleCategory() {
   if (error) return `Error: ${error}`;
   return (
     <div>
-      <h1 className={classes.title}> {category} </h1>
+      <h1 className={classes.title} style={{textTransform: "capitalize"}}> {category} </h1>
       <div className={classes.dateContainer}>
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {
