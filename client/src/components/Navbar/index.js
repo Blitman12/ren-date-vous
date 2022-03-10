@@ -30,14 +30,16 @@ const Navbar = () => {
           <Toolbar>
             {landingLocation.pathname === "/" ? "" : <img src={Ren} alt="hero" />}
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            {Auth.loggedIn() ?
               <Link
                 style={{ textDecoration: "none", color: "white" }}
                 to="/home"
               >
                 <Button color="inherit">Home</Button>
               </Link>
+              : null}
             </Typography>
-            <Grid xs={2}>
+            <Grid>
               {Auth.loggedIn() ?
                 <Link
                   style={{ textDecoration: "none", color: "white" }}
