@@ -63,12 +63,23 @@ const resolvers = {
         //Save a Date to a user
         saveDate: async (parent, { dateId }, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedDates: dateId } },
-                    { new: true, runValidators: true }
-                );
-                return updatedUser;
+                let isSaved = false
+                const duplicate = await User.findById(context.user._id)
+                duplicate.savedDates.forEach(date => {
+                    if (date == dateId) {
+                        isSaved = true
+                    }
+                })
+                if (isSaved) {
+                    throw new ApolloError("Date is already saved")
+                } else {
+                    const updatedUser = await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { savedDates: dateId } },
+                        { new: true, runValidators: true }
+                    );
+                    return updatedUser;
+                }
             }
             throw new AuthenticationError('You need to be logged in!');
         },
