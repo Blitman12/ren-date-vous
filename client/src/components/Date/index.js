@@ -10,7 +10,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { ADD_REVIEW, REMOVE_DATE, SAVE_DATE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useLocation } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
-    margin: '15px'
+    margin: "15px",
   },
   cards: {
     marginTop: "50px",
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
 
 const StyledRating = styled(Rating)({
   "& .MuiRating-iconFilled": {
-    color: "#CBAB5B"
+    color: "#CBAB5B",
   },
   "& .MuiRating-iconHover": {
     color: "#A87901",
@@ -55,7 +55,7 @@ const labels = {
   2: "Poor",
   3: "Ok",
   4: "Good",
-  5: "Excellent"
+  5: "Excellent",
 };
 
 export default function SingleCard(props) {
@@ -68,15 +68,16 @@ export default function SingleCard(props) {
   const [addReview] = useMutation(ADD_REVIEW)
   const [removeDate] = useMutation(REMOVE_DATE)
 
-  const handleSave = async event => {
-    event.preventDefault()
+  const handleSave = async (event) => {
+    event.preventDefault();
     try {
       await saveDate({
         variables: {
-          dateId: id
-        }
-      })
+          dateId: id,
+        },
+      });
     } catch (error) {
+
       console.log(error)
       let whatError = error.message
       if (whatError === "Date is already saved") {
@@ -85,33 +86,33 @@ export default function SingleCard(props) {
         setSavedError("An error occurred")
       }
     }
-    refetch()
-  }
-  const handleDel = async event => {
-    event.preventDefault()
+    refetch();
+  };
+  const handleDel = async (event) => {
+    event.preventDefault();
     try {
       await removeDate({
         variables: {
-          dateId: id
-        }
-      })
+          dateId: id,
+        },
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    refetch()
-  }
+    refetch();
+  };
   const handleReview = async (newValue) => {
     try {
       await addReview({
         variables: {
           dateId: id,
-          rating: newValue
-        }
-      })
+          rating: newValue,
+        },
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const location = useLocation();
 
@@ -119,13 +120,8 @@ export default function SingleCard(props) {
     <div onBlur={() => setSavedError("")}>
       <Box>
         <div className={classes.cardsContainer}>
-          <Card sx={{ maxWidth: 345 }} className={classes.cards} >
-            <CardMedia
-              component="img"
-              height="140"
-              alt=""
-              image={image}
-            />
+          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
+            <CardMedia component="img" height="140" alt="" image={image} />
             <CardContent>
               <Typography
                 gutterBottom
@@ -148,8 +144,8 @@ export default function SingleCard(props) {
                 sx={{
                   "& > legend": { mt: 2 },
                   width: 200,
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                 }}
               >
                 <StyledRating
@@ -162,7 +158,7 @@ export default function SingleCard(props) {
                   icon={<FavoriteIcon fontSize="inherit" />}
                   onChange={(event, newValue) => {
                     setValue(newValue);
-                    handleReview(newValue)
+                    handleReview(newValue);
                   }}
                   onChangeActive={(event, newHover) => {
                     setHover(newHover);

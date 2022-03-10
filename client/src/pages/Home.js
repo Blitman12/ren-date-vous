@@ -98,22 +98,22 @@ export default function Home() {
                 "aria-labelledby": "basic-button",
               }}
               >
-              <Button component={Link} to="/category/Home"  style={{ color: "white"}}> 
+              <Button component={Link} to="/category/home"  style={{ color: "white"}}> 
               <MenuItem onClick={handleClose}>Home</MenuItem>
               </Button>
-              <Button component={Link} to="/category/Outdoors" style={{ color: "white"}}>
+              <Button component={Link} to="/category/outdoors" style={{ color: "white"}}>
               <MenuItem onClick={handleClose}>Outdoors</MenuItem>
               </Button>
-              <Button component={Link} to="/category/Indoors" style={{ color: "white"}} >
+              <Button component={Link} to="/category/indoors" style={{ color: "white"}} >
               <MenuItem onClick={handleClose}>Indoors</MenuItem>
               </Button>
-              <Button component={Link} to="/category/Wild" style={{ color: "white"}}>
+              <Button component={Link} to="/category/wild" style={{ color: "white"}}>
               <MenuItem onClick={handleClose}>Wild</MenuItem>
               </Button>
-              <Button component={Link} to="/category/Food" style={{ color: "white"}}>
+              <Button component={Link} to="/category/food" style={{ color: "white"}}>
               <MenuItem onClick={handleClose}>Food</MenuItem>
               </Button>
-              <Button component={Link} to="/category/Romantic" style={{ color: "white"}}>
+              <Button component={Link} to="/category/romantic" style={{ color: "white"}}>
               <MenuItem onClick={handleClose}>Romantic</MenuItem>
               </Button>
             </Menu>
