@@ -24,6 +24,9 @@ const useStyles = makeStyles({
 export default function Footer() {
   const classes = useStyles();
 
+  let newDate = new Date()
+  let year = newDate.getFullYear();
+
   return (
     <footer className={classes.container}>
       <BottomNavigation
@@ -32,8 +35,7 @@ export default function Footer() {
       >
         <Typography variant="h7" component="div">
           <FavoriteBorderIcon fontSize="small" />
-          RenDATEvous Team. All Rights Reserved. Copyright &copy; 2022-
-          <script>document.write(new Date().getFullYear())</script>
+          RenDATEvous Team. All Rights Reserved. Copyright &copy; 2022-{year}
         </Typography>
       </BottomNavigation>
     </footer>
