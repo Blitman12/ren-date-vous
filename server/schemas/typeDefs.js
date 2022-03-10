@@ -31,7 +31,7 @@ type Date {
     image: String 
     reviews: [Review]
     reviewCount: Int!
-    rating: Int!
+    rating: Int
 }
 
 type Review {
@@ -43,7 +43,6 @@ type Auth {
     token: ID!
     user: User
 }
-
 `;
 
 module.exports = typeDefs

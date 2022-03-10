@@ -22,6 +22,7 @@ query ($category: String!){
       title
       description
       image
+      rating
     }
   }
 `;
@@ -33,6 +34,7 @@ query {
     title
     description
     image
+    rating
   }
 }
 `;
@@ -44,6 +46,10 @@ export const GET_SAVEDATES = gql`
           description
           _id
           image
+          reviews {
+            rating
+            username
+          }
       }
     }
 `;

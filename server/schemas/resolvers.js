@@ -1,5 +1,5 @@
-const { User, Date} = require('../models')
-const { AuthenticationError } = require('apollo-server-express');
+const { User, Date } = require('../models')
+const { AuthenticationError, ApolloError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -13,18 +13,21 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         categorizedDates: async (parent, args) => {
-            console.log(args)
-            const catDates = await Date.find({categories: args.category})
-
+            const catDates = await Date.find({ categories: args.category })
             return catDates;
         },
         dates: async (parent, args) => {
             return await Date.find({})
         },
-        savedDates: async(parent, args, context) => {
-            if(context.user) {
-                const currentUser =  await User.findById(context.user._id).populate("savedDates")
-                return currentUser.savedDates
+        savedDates: async (parent, args, context) => {
+            if (context.user) {
+                const currentUser = await User.findById(context.user._id).populate("savedDates")
+                    
+                // TODO: in future change to use a mongoose populate method instead of mutating data
+                return currentUser.savedDates.map(date => {
+                    date.reviews = date.reviews.filter(review => review.username === context.user.username)
+                    return date 
+                })
             }
             throw new AuthenticationError('Incorrect credentials');
         }
@@ -34,10 +37,8 @@ const resolvers = {
     Mutation: {
         //Add a User
         addUser: async (parent, args) => {
-            console.log(args)
             const user = await User.create(args);
             const token = signToken(user);
-
             return { token, user };
         },
 
@@ -62,12 +63,23 @@ const resolvers = {
         //Save a Date to a user
         saveDate: async (parent, { dateId }, context) => {
             if (context.user) {
-                const updatedUser = await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedDates: dateId } },
-                    { new: true, runValidators: true }
-                );
-                return updatedUser;
+                let isSaved = false
+                const duplicate = await User.findById(context.user._id)
+                duplicate.savedDates.forEach(date => {
+                    if (date == dateId) {
+                        isSaved = true
+                    }
+                })
+                if (isSaved) {
+                    throw new ApolloError("Date is already saved")
+                } else {
+                    const updatedUser = await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $addToSet: { savedDates: dateId } },
+                        { new: true, runValidators: true }
+                    );
+                    return updatedUser;
+                }
             }
             throw new AuthenticationError('You need to be logged in!');
         },
@@ -82,18 +94,39 @@ const resolvers = {
                 );
                 return updatedUser;
             }
+            throw new AuthenticationError('You need to be logged in!');
         },
 
         //Add a review
-        addReview: async(parent, {rating, dateId}, context) => {
+        addReview: async (parent, { rating, dateId }, context) => {
             if (context.user) {
-                return await Date.findOneAndUpdate(
-                    {_id: dateId},
-                    { $addToSet: {reviews: {rating: rating, username: context.user.username}}},
+                const date = await Date.findById(dateId)
+                const dateReviews = date.reviews
+                let isRated = false
+                dateReviews.forEach(review => {
+                    if (review.username === context.user.username) {
+                        isRated = true
+                    }
+                })
+                if (!isRated) {
+                    return await Date.findOneAndUpdate(
+                    { _id: dateId },
+                    { $addToSet: { reviews: { rating: rating, username: context.user.username } } },
                     { new: true, runValidators: true }
                 )
+                } else {
+                    await Date.findOneAndUpdate(
+                        { _id: dateId },
+                        {$pull: { reviews: { username: context.user.username }}},
+                        { new: true, runValidators: true }
+                    )
+                    return await Date.findOneAndUpdate(
+                        { _id: dateId },
+                        { $addToSet: { reviews: { rating: rating, username: context.user.username } } },
+                        { new: true, runValidators: true }
+                    )
+                }
             }
-            throw new AuthenticationError('You need to be logged in!');
         }
     }
 }

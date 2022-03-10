@@ -39,7 +39,7 @@ function About(props) {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const classes = useStyles()
-    const { name, img, description, github } = props
+    const { name, img, description, github, linkedin } = props
 
     return (
         <Box sx={styleBox}>
@@ -64,8 +64,9 @@ function About(props) {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             {description}
                         </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            Visit my <a href={github} target="__blank">GitHub</a>
+                        <Typography id="modal-modal-description" sx={{ mt: 2}}>
+                       Visit my <a style={{ textDecoration: "none" }} href={github} target="__blank">GitHub </a> and 
+                            <a style={{ textDecoration: "none" }} href={linkedin} target="__blank"> LinkedIn</a> 
                         </Typography>
                     </Box>
                 </Modal>

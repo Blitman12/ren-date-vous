@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './App.css';
 import Landing from './pages/Landing';
-import Categories from './pages/Categories'
 import Random from './pages/Random';
 import SingleCategory from './pages/SingleCategory'
 import Navbar from './components/Navbar';
@@ -18,6 +17,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import SavedDates from './pages/SavedDates';
 import About from './pages/About';
+import NoMatch from './pages/NoMatch'
 
 
 const httpLink = createHttpLink({
@@ -59,7 +59,7 @@ const theme = createTheme({
   },
 })
 
- 
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -69,11 +69,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/categories" component={Categories} />
             <Route exact path="/random" component={Random} />
             <Route exact path="/category/:category" component={SingleCategory} />
             <Route exact path="/saved" component={SavedDates} />
             <Route exact path="/about" component={About} />
+
+            <Route component={NoMatch} />
           </Switch>
         </Router>
       </ThemeProvider>
