@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
-import Stars from "../assets/stars.png";
+
 import { useQuery } from "@apollo/client";
 import { DATES } from "../utils/queries";
 import Date from "../components/Date";
@@ -18,17 +18,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '20px'
-  },
-  imageContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    backgroundImage: `url(${Stars})`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    height: "100vh",
-    position: "absolute",
   }
 });
 
@@ -55,7 +44,7 @@ export default function SingleDateRandom() {
   const randomDate = () => {
     if (currentDate) {
       const {title, description, image, _id, rating} = currentDate
-      return <Date title={title} description={description} image={image} key={_id} id={_id} refetch={refetch} review={rating}></Date>
+      return <Date title={title} description={description} image={image} key={_id} id={_id} refetch={refetch} review={rating} horizontal={true}></Date>
     }
   }
 
@@ -64,7 +53,7 @@ export default function SingleDateRandom() {
   const aRandomDate = data.dates[Math.floor(Math.random() * data.dates.length)]
 
   return (
-    <div className={classes.imageContainer}>
+    <div>
       <h1 className={classes.title}>Random Date</h1>
       {randomDate()}
       <div className={classes.randomButton}>
