@@ -12,7 +12,6 @@ import { ADD_REVIEW, REMOVE_DATE, SAVE_DATE } from "../../utils/mutations";
 import { useMutation } from "@apollo/client";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useLocation } from "react-router-dom";
-import Stack from "@mui/material/Stack";
 
 const useStyles = makeStyles({
   title: {
@@ -23,17 +22,6 @@ const useStyles = makeStyles({
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     margin: "15px",
-  },
-  cards: {
-    marginTop: "50px",
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#FFDCD1",
-    border: "2px solid #805373",
-    borderRadius: "10%",
-    boxShadow: "#A2B3D6 3px 3px 20px 5px",
-    color: "#a41a1d",
-    width: 345 
   },
   text: {
     textAlign: "center",
@@ -81,7 +69,7 @@ const labels = {
 
 export default function SingleCard(props) {
   const classes = useStyles(props);
-  const { image, title, description, id, refetch, review, horizontal} = props
+  const { image, title, description, id, refetch, review} = props
   const [value, setValue] = useState(review);
   const [hover, setHover] = useState(-1);
   const [savedError, setSavedError] = useState();
