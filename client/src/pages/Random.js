@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
-
 import { useQuery } from "@apollo/client";
 import { DATES } from "../utils/queries";
 import Date from "../components/Date";
