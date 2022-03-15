@@ -10,6 +10,7 @@ import Auth from '../utils/auth';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import PacmanLoader from "react-spinners/PacmanLoader";
+import NoDates from '../assets/Nodates.png'
 
 const useStyles = makeStyles({
   title: {
@@ -130,7 +131,7 @@ export default function Home() {
           <h2>Memories <FavoriteIcon color="primary"/></h2>
         </div>
         <div className={classes.dateContainer}>
-          {data && data.savedDates.slice(0, 3).map(date => {
+          {data.savedDates.length === 0 ? <div><img src={NoDates} alt="No Dates" style={{width: "300px"}}/></div> : data && data.savedDates.slice(0, 3).map(date => {
             const review = date.reviews[0]?.rating || 0
             return <Date key={date._id} title={date.title} description={date.description} image={date.image} id={date._id} refetch={refetch} review={review}/>
           })}
