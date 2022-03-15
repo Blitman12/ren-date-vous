@@ -9,6 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Auth from '../utils/auth';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const useStyles = makeStyles({
   title: {
@@ -42,6 +43,12 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
+  },
+  loader: {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
   }
 });
 
@@ -65,7 +72,7 @@ export default function Home() {
 })
 
   if (loading) {
-    return <div>loading...</div>
+    return <div className={classes.loader}><PacmanLoader color="red" /></div>
   }
 
 
