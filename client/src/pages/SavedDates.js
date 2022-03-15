@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_SAVEDATES } from '../utils/queries';
 import Auth from '../utils/auth';
 import { useHistory } from 'react-router-dom';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 
 const useStyles = makeStyles({
@@ -16,6 +17,12 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
+    },
+    loader: {
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
     }
 });
 
@@ -26,14 +33,14 @@ export default function SavedDates() {
     if (!Auth.loggedIn()) {
         history.push("/")
     }
-    const {loading, data, refetch} = useQuery(GET_SAVEDATES, {
+    const { loading, data, refetch } = useQuery(GET_SAVEDATES, {
         fetchPolicy: 'network-only'
     })
 
     if (loading) {
-        return <div>loading...</div>
+        return <div className={classes.loader}><PacmanLoader color="red" /></div>
     }
-    
+
     return (
         <div>
             <h1 className={classes.title}> Saved Dates</h1>

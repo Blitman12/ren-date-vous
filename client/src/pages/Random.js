@@ -6,6 +6,7 @@ import { DATES } from "../utils/queries";
 import Date from "../components/Date";
 import Auth from '../utils/auth';
 import { useHistory } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 
 const useStyles = makeStyles({
@@ -17,6 +18,12 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '20px'
+  },
+  loader: {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
   }
 });
 
@@ -47,7 +54,7 @@ export default function SingleDateRandom() {
     }
   }
 
-  if (loading) return null;
+  if (loading) return <div className={classes.loader}><PacmanLoader color="red" /></div>;
   if (error) return `error: ${error}`;
   const aRandomDate = data.dates[Math.floor(Math.random() * data.dates.length)]
 
