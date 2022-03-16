@@ -3,8 +3,9 @@ import Date from "../components/Date";
 import { makeStyles } from "@mui/styles";
 import { useQuery } from "@apollo/client";
 import { GET_CATDATES } from "../utils/queries";
-import {  useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Auth from '../utils/auth';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const useStyles = makeStyles({
   title: {
@@ -19,6 +20,12 @@ const useStyles = makeStyles({
   button: {
     textAlign: "center",
   },
+  loader: {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)"
+  }
 });
 
 export default function SingleCategory() {
@@ -36,11 +43,11 @@ export default function SingleCategory() {
     fetchPolicy: 'network-only'
   });
 
-  if (loading) return null;
+  if (loading) return <div className={classes.loader}><PacmanLoader color="red" /></div>;
   if (error) return `Error: ${error}`;
   return (
     <div>
-      <h1 className={classes.title} style={{textTransform: "capitalize"}}> {category} </h1>
+      <h1 className={classes.title} style={{ textTransform: "capitalize" }}> {category} </h1>
       <div className={classes.dateContainer}>
         {data.categorizedDates &&
           data.categorizedDates.map((date) => {

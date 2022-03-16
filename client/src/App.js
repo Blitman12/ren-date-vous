@@ -73,7 +73,6 @@ function App() {
             <Route exact path="/category/:category" component={SingleCategory} />
             <Route exact path="/saved" component={SavedDates} />
             <Route exact path="/about" component={About} />
-
             <Route component={NoMatch} />
           </Switch>
         </Router>

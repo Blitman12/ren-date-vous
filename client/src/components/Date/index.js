@@ -23,22 +23,31 @@ const useStyles = makeStyles({
     justifyContent: "space-evenly",
     margin: "15px",
   },
-  cards: {
-    marginTop: "50px",
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#FFDCD1",
-    border: "2px solid #805373",
-    borderRadius: "10%",
-    boxShadow: "#A2B3D6 3px 3px 20px 5px",
-    color: "#a41a1d",
-  },
   text: {
     textAlign: "center",
   },
   icon: {
     marginLeft: "auto",
   },
+  cardHorizontal: props => {
+    return {
+     width: props.horizontal ? 1000 : 345,
+     marginTop: props.horizontal ? "20px" : "50px",
+     display: "flex",
+     flexDirection: "column",
+     backgroundColor: "#FFDCD1",
+     border: "2px solid #805373",
+     borderRadius: "10%",
+     boxShadow: "#A2B3D6 3px 3px 20px 5px",
+     color: "#a41a1d",
+     height: props.horizontal ? 600 : "",
+    }
+  },
+  imageHeight: props => {
+    return {
+     height: props.horizontal ? 400 : "",
+    }
+  }
 });
 
 const StyledRating = styled(Rating)({
@@ -59,8 +68,8 @@ const labels = {
 };
 
 export default function SingleCard(props) {
-  const classes = useStyles();
-  const { image, title, description, id, refetch, review } = props
+  const classes = useStyles(props);
+  const { image, title, description, id, refetch, review} = props
   const [value, setValue] = useState(review);
   const [hover, setHover] = useState(-1);
   const [savedError, setSavedError] = useState();
@@ -120,8 +129,8 @@ export default function SingleCard(props) {
     <div onBlur={() => setSavedError("")}>
       <Box>
         <div className={classes.cardsContainer}>
-          <Card sx={{ maxWidth: 345 }} className={classes.cards}>
-            <CardMedia component="img" height="140" alt="" image={image} />
+          <Card className={classes.cardHorizontal}>
+            <CardMedia className={classes.imageHeight} component="img" height="140" alt="" image={image} />
             <CardContent>
               <Typography
                 gutterBottom
