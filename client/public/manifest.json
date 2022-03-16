@@ -5,9 +5,10 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "50x50"
     }
   ],
+  "id": "/index.html",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
