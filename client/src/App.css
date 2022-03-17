@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* Coin Flip Game */
 /* h2 {
@@ -116,7 +116,7 @@
   margin: .25rem;
 } */
 
-.container {
+/* .container {
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -129,7 +129,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 /* #coin {
   position: relative;
@@ -138,13 +138,13 @@
   height: 100px;
 } */
 
-#coin {
+/* #coin {
   position: relative;
   width: 35rem;
   height: 35rem;
   margin: 2rem 0rem;
   transform-style: preserve-3d;
-}
+} */
 
 /* #coin div {
   width: 100%;
@@ -160,7 +160,7 @@
     0 12px 20px -10px rgba(0, 0, 0, 0.4);
 } */
 
-#coin div {
+/* #coin div {
   width: 100%;
   height: 100%;
  border: 2px solid black;
@@ -175,9 +175,9 @@
 .side-a {
   background-image: url(./assets/tails.jpg);
   /* transform: rotateY(-180deg); */
-}
+/* } */
 
-.animate-side-a {
+/* .animate-side-a {
   animation: flipTails 3s;
   animation-fill-mode: forwards;
 }
@@ -207,7 +207,7 @@
   to {
     transform: rotateY(1800deg);
   }
-}
+} */
 
 /* #coin {
   transition: -webkit-transform 1s ease-in;
@@ -220,7 +220,7 @@
 /* .side-a {
   z-index: 100;
 } */
-.side-b {
+/* .side-b {
   transform: rotateY(-180deg);
 }
 
@@ -260,5 +260,74 @@
     -webkit-transform: rotateY(720deg);
     -moz-transform: rotateY(720deg);
     transform: rotateY(720deg);
+  }
+} */
+
+
+div.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 1rem;
+  background-color: skyblue;
+}
+
+#coin {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 2rem 0rem;
+  transform-style: preserve-3d;
+
+}
+
+#coin div {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  background-size: contain;
+  position: absolute;
+}
+
+.heads {
+    background-image: url("https://en.numista.com/catalogue/photos/inde/2311-original.jpg");
+}
+
+.animate-heads {
+  animation: flipHeads 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1800deg);
+  }
+}
+
+.tails {
+    background-image: url("https://en.numista.com/catalogue/photos/inde/3165-original.jpg");
+  transform: rotateY(-180deg);
+}
+
+.animate-tails {
+  animation: flipTails 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipTails {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1620deg);
   }
 }
