@@ -88,6 +88,11 @@ export default function Home() {
             Random
           </Button>
         </Link>
+        <Link to="/coin" className={classes.link}>
+          <Button className={classes.buttons} size='large' variant="contained">
+           Coin Flip
+          </Button>
+        </Link>
         <Button className={classes.buttons} size='large' variant="contained"
               id="basic-button"
               aria-controls={open ? "basic-menu" : undefined}
