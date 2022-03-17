@@ -90,7 +90,7 @@ export default function Home() {
         </Link>
         <Link to="/coin" className={classes.link}>
           <Button className={classes.buttons} size='large' variant="contained">
-           Coin Flip
+           Coin Toss
           </Button>
         </Link>
         <Button className={classes.buttons} size='large' variant="contained"

@@ -4,6 +4,9 @@ import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/material";
 
 const useStyles = makeStyles({
+  title: {
+    textAlign: "center"
+  },
   rules: {
     border: "6px solid black",
      width: 400,
@@ -65,6 +68,9 @@ export default function Coin() {
   // }
 
   return (
+    <div className={classes.title}>
+    <h1>Coin Toss</h1>
+    <h2>Give me a flip!</h2>
     <Box className="container">
       <div className={classes.rules}>
         <h1>Rules:</h1>
@@ -78,8 +84,6 @@ export default function Coin() {
         </ol>
     </div>
         <div className="coinContainer">
-          <h1>Coin Toss</h1>
-          <h2>Give me a flip!</h2>
           <div id="coin">
             <div id="heads" className="heads"></div>
             <div id="tails" className="tails"></div>
@@ -96,5 +100,6 @@ export default function Coin() {
           </p>
         </div>
       </Box>
+    </div>
   );
 }
