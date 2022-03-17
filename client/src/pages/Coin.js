@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 const useStyles = makeStyles({
   title: {
     textAlign: "center",
+    color:"white"
   },
   rules: {
     border: "6px solid black",
