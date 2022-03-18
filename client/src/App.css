@@ -38,10 +38,6 @@
 }
 
 /* Coin Flip Game */
-h2 {
-  margin: .25rem;
-}
-
 .container {
   margin: auto;
   display: flex;
@@ -61,19 +57,17 @@ h2 {
   position: relative;
   width: 30rem;
   height: 30rem;
-  margin: 2rem 0rem;
   transform-style: preserve-3d;
 }
 
 #coin div {
   width: 100%;
   height: 100%;
- border: 2px solid black;
+  border: 2px solid black;
   border-radius: 50%;
   backface-visibility: hidden;
   background-size: contain;
   position: absolute;
-  
 }
 
 .heads {
@@ -96,7 +90,7 @@ h2 {
 
 .tails {
     background-image: url(./assets/tails.jpg);
-  transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
 }
 
 .animate-tails {

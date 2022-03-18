@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     border: "6px solid black",
     width: 400,
     textAlign: "center",
-    height: 420
+    height: 460
   },
   rulesFont: {
     fontSize: 20,
@@ -52,6 +52,8 @@ export default function Coin() {
       <Box className="container">
         <div className={classes.rules}>
           <h1>Rules:</h1>
+          <h2> Heads: Turn Right</h2>
+          <h2> Tails: Turn Left</h2>
           <ol className={classes.rulesFont}>
             <li>Choose a number from 1 to 20 </li>
             <li>
@@ -65,8 +67,6 @@ export default function Coin() {
               Your date is here! Ended up at a petsmart? Find something fun to
               do!
             </li>
-            <li>Heads: Go Right</li>
-            <li>Tails: Go Left</li>
           </ol>
         </div>
         <div className="coinContainer">
@@ -77,7 +77,7 @@ export default function Coin() {
         </div>
       </Box>
           <div className={classes.title}>
-          <h1>Flip a coin</h1>
+          <h1>Flip coin</h1>
           <Button size="large" variant="contained" onClick={flipCoin}>
             Coin Toss
           </Button>
