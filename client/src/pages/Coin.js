@@ -34,12 +34,14 @@ export default function Coin() {
     setCoin("");
     const random = Math.random();
     if (random < 0.5) {
-      console.log(random);
-      setCoin("heads");
+      setTimeout(() => {
+        setCoin("heads")
+      }, 0);
       setHeadsCount(headsCount + 1);
     } else {
-      console.log(random);
-      setCoin("tails");
+      setTimeout(() => {
+        setCoin("tails");
+      }, 0);
       setTailsCount(tailsCount + 1);
     }
   };
