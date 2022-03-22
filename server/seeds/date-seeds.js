@@ -13,7 +13,7 @@ const picnic = "/images/picnic.jpg";
 const shooting = "/images/Shooting.jpg";
 const art = "/images/art.jpg";
 const archery = "/images/archery.jpg";
-const axe = "/images/axe-throwing.jpg";
+const axe = "/images/axe.jpg";
 const pillowFort = "/images/pillowFort.jpg";
 const horseback = "/images/horseback.jpg";
 const walk = "/images/walk.jpg";
@@ -123,7 +123,7 @@ const dateIdeas = [
   {
     title: 'Random Meal',
     description: 'Find a random recipe you have never made or had before and enjoy some new food right in your kitchen!',
-    categories: ['food'],
+    categories: ['home'],
     image: cookingDinner,
     reviews: []
   },
