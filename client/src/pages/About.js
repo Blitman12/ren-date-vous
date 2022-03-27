@@ -5,6 +5,7 @@ import Member from "../components/Member";
 import Jen from "../assets/jen.png";
 import Nick from "../assets/nick.jpg";
 import Luke from "../assets/Luke.jpeg";
+import Brad from "../assets/brad.jpg"
 
 const useStyles = makeStyles({
   container: {
@@ -37,7 +38,7 @@ const useStyles = makeStyles({
 
 const team = [
   {
-    img: "https://scontent.fphx1-2.fna.fbcdn.net/v/t1.6435-9/49612804_10215930290924230_4355613411040559104_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=0debeb&_nc_ohc=8g1cJWqAUBwAX8Wh6QJ&_nc_ht=scontent.fphx1-2.fna&oh=00_AT_jhvOc-8tOC02_eHlbAzJn3sUVQaQ8_Vmm-nwFblpY1A&oe=6236E163",
+    img: `${Brad}`,
     name: "Brad Litman",
     description:
       "Recent graduate from a Full Stack Boot Camp from UofA along with a Bachelors in Nursing. Happily married with two 'skin' children (hairless cats)",
