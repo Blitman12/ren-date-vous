@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+
+/* Coin Flip Game */
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.coinContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#coin {
+  position: relative;
+  width: 30rem;
+  height: 30rem;
+  transform-style: preserve-3d;
+}
+
+#coin div {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  background-size: contain;
+  position: absolute;
+}
+
+.heads {
+    background-image: url(./assets/heads.jpg);
+}
+
+.animate-heads {
+  animation: flipHeads 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1800deg);
+  }
+}
+
+.tails {
+    background-image: url(./assets/tails.jpg);
+    transform: rotateY(-180deg);
+}
+
+.animate-tails {
+  animation: flipTails 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flipTails {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1620deg);
+  }
+}

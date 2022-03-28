@@ -17,7 +17,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import SavedDates from './pages/SavedDates';
 import About from './pages/About';
-import NoMatch from './pages/NoMatch'
+import Coin from './pages/Coin';
+import NoMatch from './pages/NoMatch';
 
 
 const httpLink = createHttpLink({
@@ -73,6 +74,7 @@ function App() {
             <Route exact path="/category/:category" component={SingleCategory} />
             <Route exact path="/saved" component={SavedDates} />
             <Route exact path="/about" component={About} />
+            <Route exact path="/coin" component={Coin} />
             <Route component={NoMatch} />
           </Switch>
         </Router>
